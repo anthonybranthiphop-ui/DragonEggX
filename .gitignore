@@ -1,0 +1,7 @@
+.DS_Store
+**/.DS_Store
+.derived_*
+.verify_derived_data
+build/
+DerivedData/
+**/~$*.xlsx

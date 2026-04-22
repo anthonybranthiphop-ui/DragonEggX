@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0119EBD6F5D2DE5DD839A22B /* 04_Nyxus, Cloud God of Eternal Storms.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BCD9647F3F84A58F29A6A6B8 /* 04_Nyxus, Cloud God of Eternal Storms.mp4 */; };
+		083716D021EDEAF1EC204E54 /* GrokSpritePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC59067CF19297F11434441E /* GrokSpritePlaceholder.swift */; };
+		09BD164841E7DE4CCC851E4C /* 05_Boreal, Crystal God of Eternal Light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86356BBBBC2B4FECC26C129A /* 05_Boreal, Crystal God of Eternal Light.jpg */; };
+		0AF8F06C9BE09F21F42A1E3A /* 2. Zorvath, the Reality Ender (Ultra).jpg in Resources */ = {isa = PBXBuildFile; fileRef = C16C88AE6C899D3008387DA0 /* 2. Zorvath, the Reality Ender (Ultra).jpg */; };
+		10E2C58C351A70C77BCD9B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33A5C5D7F0D4FEC30397E805 /* Assets.xcassets */; };
+		1372D0F40223B561317CA7FD /* GameCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FBB9A6D23572D0F5EE575 /* GameCharacter.swift */; };
+		1AE1AA3425206B1326D8341D /* SummonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E3491F23469E0A6614031 /* SummonViewModel.swift */; };
+		1E5CB18B321A7F83DDE0B1AC /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 661D8A9EA8A8B690276D9857 /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 */; };
+		27B289EF0C1350FE7A4F16A4 /* 10_Grakthar, Earth Titan God of Eternal Growth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9844BC981640803ACE73A2D2 /* 10_Grakthar, Earth Titan God of Eternal Growth.mp4 */; };
+		27C8827E35886ECBCA071E8B /* Ultra Legends Rising Summon (0.01% - THE RARE ONE).mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 137C88A594D8B6273C3F9C39 /* Ultra Legends Rising Summon (0.01% - THE RARE ONE).mp4 */; };
+		2C3C6FD718396F71AE801695 /* 03_Lumina, Super Saiyan 5 Genesis Angel.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6D82673F248622E7DEBE465A /* 03_Lumina, Super Saiyan 5 Genesis Angel.mp4 */; };
+		37DF9966D3AFB65E1C161BB0 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 29F5CB19352F4A16322F4A6B /* characters.json */; };
+		3D7FA80914B83607574A9E86 /* 03_Lumina, Super Saiyan 5 Genesis Angel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BEF157CE737C45FEB79E0DB4 /* 03_Lumina, Super Saiyan 5 Genesis Angel.jpg */; };
+		3DE92916495EBCEE47A274E0 /* 10_Grakthar, Earth Titan God of Eternal Growth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3419B236D6D5F999E180AFA1 /* 10_Grakthar, Earth Titan God of Eternal Growth.jpg */; };
+		45A9D51A494B9D5234974B4A /* SummonEffectLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE7420CB2B24118AA0ADE0 /* SummonEffectLibrary.swift */; };
+		4AAE0F65A85E0C4A8941828A /* 05_Boreal, Crystal God of Eternal Light.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 848B1898E27DED64C3E00FC9 /* 05_Boreal, Crystal God of Eternal Light.mp4 */; };
+		4D266A530DD46E9BE3F0E3A1 /* NumberFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236814AEE2CB2D2CE8927A23 /* NumberFormatting.swift */; };
+		5D5AA9E7F3765A474B317E34 /* Extreme Summon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4975AF5F215EFF12474C7535 /* Extreme Summon.mp4 */; };
+		684AFF3D29F7C8C7FD31AEEF /* Hero Summon (Common)1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4625D41323BC3E7E72595B01 /* Hero Summon (Common)1.mp4 */; };
+		6AC0D0908ECF6BA4AB5D745B /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8906E378D143ABD3A4440 /* CollectionView.swift */; };
+		719275FFEE7C2F8782A99ECE /* LR (Legends Rising) Summon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 793DF5CB229F18E99A690FBB /* LR (Legends Rising) Summon.mp4 */; };
+		71EE8D66E74DCBC6F0F5795F /* 08_Elara, Lightning Valkyrie of Eternal Thunder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8328AA941C232FC18BA4C24 /* 08_Elara, Lightning Valkyrie of Eternal Thunder.jpg */; };
+		73C97101F32EF141EA9A346C /* TeamState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593ED021E0C73A8D04D6F8A1 /* TeamState.swift */; };
+		74BE6CC6E6310F350A16539F /* UltraLegendsRisingArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8896C58ED21963A95D69DA /* UltraLegendsRisingArt.swift */; };
+		7E179F194F24E59A220AA83D /* 08_Elara, Lightning Valkyrie of Eternal Thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40C2605B77DF5502B0A16ADB /* 08_Elara, Lightning Valkyrie of Eternal Thunder.mp4 */; };
+		852222567F94149D0961FDBC /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1A9B988CEF63B8AD105CB /* CharacterDetailView.swift */; };
+		8875B586E707718D823AB2BA /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BB701192475882E836AE016D /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg */; };
+		8954CE1D56DECC78FBCAB698 /* CharacterArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ABEA31349FC13CB22A2E56 /* CharacterArtView.swift */; };
+		8E8A45D964166564083478F4 /* 09_Boreal, Super Saiyan 15 Frost Titan.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7FF5FF90A4219CFFECA15444 /* 09_Boreal, Super Saiyan 15 Frost Titan.mp4 */; };
+		9574BCF153F0B0CF709E056D /* 06_Ignara, Time Lord of Infinite Cycles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC18195224F0F6DCDD4C2234 /* 06_Ignara, Time Lord of Infinite Cycles.jpg */; };
+		96E1FFCE3AF19F22FF9E6DDD /* 1. Aetherion, the Eternal Sovereign (Ultra Legends Rising).jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8FFF7CC037BACD2F84BA50C /* 1. Aetherion, the Eternal Sovereign (Ultra Legends Rising).jpg */; };
+		972AC493D1734B5412D77151 /* EternalSummonPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045CD35E9EB51EB44EAE3CC /* EternalSummonPaths.swift */; };
+		994D42064500A957E331E719 /* CatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E9C80902B87C481B78EEC /* CatalogService.swift */; };
+		9E239EA4BFDF40C147252772 /* 07_Zorath, Frost Demon God of Absolute Zero.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B48424D6D782C9CE2EA82BE1 /* 07_Zorath, Frost Demon God of Absolute Zero.jpg */; };
+		A3868EA5BCB89BFBF7372E7C /* Eternal_Summon_Full_Catalog_with_Sprites_and_Moves.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 77F29520993941B5850761DE /* Eternal_Summon_Full_Catalog_with_Sprites_and_Moves.xlsx */; };
+		AC8D3AA07D5D0A6B36DDAEC8 /* Rarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4F1366FC40307E43C1DA18 /* Rarity.swift */; };
+		AD92E9CACBB752BCA37E7878 /* DragonEggXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5A889EE2676C87EE1343D8 /* DragonEggXApp.swift */; };
+		AF5F8116B5892D403D9F3E1E /* TeamBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20980A178742182153A2C0FC /* TeamBuilderView.swift */; };
+		AFE1D9E26423627716682217 /* BattlePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722764586D7038C8A70D4057 /* BattlePlaceholderView.swift */; };
+		B5CC176BE434D9DCE185160B /* 06_Ignara, Time Lord of Infinite Cycles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6D4B2C42DF7F50F084F23929 /* 06_Ignara, Time Lord of Infinite Cycles.mp4 */; };
+		BFA73103230AD7A6981F9F4A /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg in Resources */ = {isa = PBXBuildFile; fileRef = A38F67D3D6D02ED118E1D4CF /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg */; };
+		C61B0D84174DDC683CEF5A9D /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D15342F362EC3F77D4605BA0 /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg */; };
+		C7ED4559572798CCF9CE4C26 /* Sparking Summon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2C7AB5E3E802C74055CC2E61 /* Sparking Summon.mp4 */; };
+		D5803BBDE83EBAB4703DC7D4 /* SummonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D7A4A03C1F5D400941447D /* SummonView.swift */; };
+		DA929151037C3C2B1382B841 /* LocalBundledVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA225D87ACE0E4D2DF8EB1 /* LocalBundledVideoView.swift */; };
+		DAFACC324D97D8DD80172F2E /* 07_Zorath, Frost Demon God of Absolute Zero.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 305DC23DDE94643F64D53B0C /* 07_Zorath, Frost Demon God of Absolute Zero.mp4 */; };
+		DDEF1D35A7952D79F44BA1D2 /* 04_Nyxus, Cloud God of Eternal Storms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44255182719D025BC8CC5497 /* 04_Nyxus, Cloud God of Eternal Storms.jpg */; };
+		E1AACF535AC2E718F0F0F1E6 /* 02_Zorvath, Super Saiyan 5 Reality Ender.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BD432C2DBC22E1B3E7A6A22B /* 02_Zorvath, Super Saiyan 5 Reality Ender.mp4 */; };
+		E4A875148958D7BA959B8167 /* 3. Lumina, the Genesis Angel (Ultra).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B448326426794EEE92F28A5 /* 3. Lumina, the Genesis Angel (Ultra).jpg */; };
+		F1C3EDCB8809413A58E66C21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCA44916FC2E55239D33BB /* MainTabView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09D7A4A03C1F5D400941447D /* SummonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonView.swift; sourceTree = "<group>"; };
+		137C88A594D8B6273C3F9C39 /* Ultra Legends Rising Summon (0.01% - THE RARE ONE).mp4 */ = {isa = PBXFileReference; path = "Ultra Legends Rising Summon (0.01% - THE RARE ONE).mp4"; sourceTree = "<group>"; };
+		1A5A889EE2676C87EE1343D8 /* DragonEggXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonEggXApp.swift; sourceTree = "<group>"; };
+		20980A178742182153A2C0FC /* TeamBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamBuilderView.swift; sourceTree = "<group>"; };
+		236814AEE2CB2D2CE8927A23 /* NumberFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatting.swift; sourceTree = "<group>"; };
+		243D118C4F616330F16EAA87 /* DragonEggX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DragonEggX.entitlements; sourceTree = "<group>"; };
+		29F5CB19352F4A16322F4A6B /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		2A9E3491F23469E0A6614031 /* SummonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonViewModel.swift; sourceTree = "<group>"; };
+		2C7AB5E3E802C74055CC2E61 /* Sparking Summon.mp4 */ = {isa = PBXFileReference; path = "Sparking Summon.mp4"; sourceTree = "<group>"; };
+		2CEA225D87ACE0E4D2DF8EB1 /* LocalBundledVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBundledVideoView.swift; sourceTree = "<group>"; };
+		305DC23DDE94643F64D53B0C /* 07_Zorath, Frost Demon God of Absolute Zero.mp4 */ = {isa = PBXFileReference; path = "07_Zorath, Frost Demon God of Absolute Zero.mp4"; sourceTree = "<group>"; };
+		33A5C5D7F0D4FEC30397E805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3419B236D6D5F999E180AFA1 /* 10_Grakthar, Earth Titan God of Eternal Growth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10_Grakthar, Earth Titan God of Eternal Growth.jpg"; sourceTree = "<group>"; };
+		3B448326426794EEE92F28A5 /* 3. Lumina, the Genesis Angel (Ultra).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3. Lumina, the Genesis Angel (Ultra).jpg"; sourceTree = "<group>"; };
+		3EA1A9B988CEF63B8AD105CB /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		40C2605B77DF5502B0A16ADB /* 08_Elara, Lightning Valkyrie of Eternal Thunder.mp4 */ = {isa = PBXFileReference; path = "08_Elara, Lightning Valkyrie of Eternal Thunder.mp4"; sourceTree = "<group>"; };
+		44255182719D025BC8CC5497 /* 04_Nyxus, Cloud God of Eternal Storms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "04_Nyxus, Cloud God of Eternal Storms.jpg"; sourceTree = "<group>"; };
+		4625D41323BC3E7E72595B01 /* Hero Summon (Common)1.mp4 */ = {isa = PBXFileReference; path = "Hero Summon (Common)1.mp4"; sourceTree = "<group>"; };
+		4975AF5F215EFF12474C7535 /* Extreme Summon.mp4 */ = {isa = PBXFileReference; path = "Extreme Summon.mp4"; sourceTree = "<group>"; };
+		593ED021E0C73A8D04D6F8A1 /* TeamState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamState.swift; sourceTree = "<group>"; };
+		5C0E9C80902B87C481B78EEC /* CatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogService.swift; sourceTree = "<group>"; };
+		5FEE7420CB2B24118AA0ADE0 /* SummonEffectLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonEffectLibrary.swift; sourceTree = "<group>"; };
+		661D8A9EA8A8B690276D9857 /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 */ = {isa = PBXFileReference; path = "01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4"; sourceTree = "<group>"; };
+		681FBB9A6D23572D0F5EE575 /* GameCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCharacter.swift; sourceTree = "<group>"; };
+		6D4B2C42DF7F50F084F23929 /* 06_Ignara, Time Lord of Infinite Cycles.mp4 */ = {isa = PBXFileReference; path = "06_Ignara, Time Lord of Infinite Cycles.mp4"; sourceTree = "<group>"; };
+		6D82673F248622E7DEBE465A /* 03_Lumina, Super Saiyan 5 Genesis Angel.mp4 */ = {isa = PBXFileReference; path = "03_Lumina, Super Saiyan 5 Genesis Angel.mp4"; sourceTree = "<group>"; };
+		722764586D7038C8A70D4057 /* BattlePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlePlaceholderView.swift; sourceTree = "<group>"; };
+		77F29520993941B5850761DE /* Eternal_Summon_Full_Catalog_with_Sprites_and_Moves.xlsx */ = {isa = PBXFileReference; path = Eternal_Summon_Full_Catalog_with_Sprites_and_Moves.xlsx; sourceTree = "<group>"; };
+		793DF5CB229F18E99A690FBB /* LR (Legends Rising) Summon.mp4 */ = {isa = PBXFileReference; path = "LR (Legends Rising) Summon.mp4"; sourceTree = "<group>"; };
+		7FF5FF90A4219CFFECA15444 /* 09_Boreal, Super Saiyan 15 Frost Titan.mp4 */ = {isa = PBXFileReference; path = "09_Boreal, Super Saiyan 15 Frost Titan.mp4"; sourceTree = "<group>"; };
+		848B1898E27DED64C3E00FC9 /* 05_Boreal, Crystal God of Eternal Light.mp4 */ = {isa = PBXFileReference; path = "05_Boreal, Crystal God of Eternal Light.mp4"; sourceTree = "<group>"; };
+		86356BBBBC2B4FECC26C129A /* 05_Boreal, Crystal God of Eternal Light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "05_Boreal, Crystal God of Eternal Light.jpg"; sourceTree = "<group>"; };
+		9844BC981640803ACE73A2D2 /* 10_Grakthar, Earth Titan God of Eternal Growth.mp4 */ = {isa = PBXFileReference; path = "10_Grakthar, Earth Titan God of Eternal Growth.mp4"; sourceTree = "<group>"; };
+		9FCCA44916FC2E55239D33BB /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A38F67D3D6D02ED118E1D4CF /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg"; sourceTree = "<group>"; };
+		AC18195224F0F6DCDD4C2234 /* 06_Ignara, Time Lord of Infinite Cycles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "06_Ignara, Time Lord of Infinite Cycles.jpg"; sourceTree = "<group>"; };
+		B0ABEA31349FC13CB22A2E56 /* CharacterArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterArtView.swift; sourceTree = "<group>"; };
+		B48424D6D782C9CE2EA82BE1 /* 07_Zorath, Frost Demon God of Absolute Zero.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "07_Zorath, Frost Demon God of Absolute Zero.jpg"; sourceTree = "<group>"; };
+		B7B0C3028FFB10C071735C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B8328AA941C232FC18BA4C24 /* 08_Elara, Lightning Valkyrie of Eternal Thunder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "08_Elara, Lightning Valkyrie of Eternal Thunder.jpg"; sourceTree = "<group>"; };
+		BB701192475882E836AE016D /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02_Zorvath, Super Saiyan 5 Reality Ender.jpg"; sourceTree = "<group>"; };
+		BC59067CF19297F11434441E /* GrokSpritePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrokSpritePlaceholder.swift; sourceTree = "<group>"; };
+		BCD9647F3F84A58F29A6A6B8 /* 04_Nyxus, Cloud God of Eternal Storms.mp4 */ = {isa = PBXFileReference; path = "04_Nyxus, Cloud God of Eternal Storms.mp4"; sourceTree = "<group>"; };
+		BD432C2DBC22E1B3E7A6A22B /* 02_Zorvath, Super Saiyan 5 Reality Ender.mp4 */ = {isa = PBXFileReference; path = "02_Zorvath, Super Saiyan 5 Reality Ender.mp4"; sourceTree = "<group>"; };
+		BEF157CE737C45FEB79E0DB4 /* 03_Lumina, Super Saiyan 5 Genesis Angel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "03_Lumina, Super Saiyan 5 Genesis Angel.jpg"; sourceTree = "<group>"; };
+		C16C88AE6C899D3008387DA0 /* 2. Zorvath, the Reality Ender (Ultra).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2. Zorvath, the Reality Ender (Ultra).jpg"; sourceTree = "<group>"; };
+		CC8896C58ED21963A95D69DA /* UltraLegendsRisingArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltraLegendsRisingArt.swift; sourceTree = "<group>"; };
+		D15342F362EC3F77D4605BA0 /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "09_Boreal, Super Saiyan 15 Frost Titan.jpg"; sourceTree = "<group>"; };
+		D8FFF7CC037BACD2F84BA50C /* 1. Aetherion, the Eternal Sovereign (Ultra Legends Rising).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1. Aetherion, the Eternal Sovereign (Ultra Legends Rising).jpg"; sourceTree = "<group>"; };
+		E045CD35E9EB51EB44EAE3CC /* EternalSummonPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EternalSummonPaths.swift; sourceTree = "<group>"; };
+		E7A8906E378D143ABD3A4440 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		EE4F1366FC40307E43C1DA18 /* Rarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rarity.swift; sourceTree = "<group>"; };
+		F08E1257A69C90F92EA31C45 /* DragonEggX.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DragonEggX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		319AED923F3D8DF568D8854B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				236814AEE2CB2D2CE8927A23 /* NumberFormatting.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		36A29468E645AD72119C9F27 /* 03_Summon_Effects */ = {
+			isa = PBXGroup;
+			children = (
+				4975AF5F215EFF12474C7535 /* Extreme Summon.mp4 */,
+				4625D41323BC3E7E72595B01 /* Hero Summon (Common)1.mp4 */,
+				793DF5CB229F18E99A690FBB /* LR (Legends Rising) Summon.mp4 */,
+				2C7AB5E3E802C74055CC2E61 /* Sparking Summon.mp4 */,
+				137C88A594D8B6273C3F9C39 /* Ultra Legends Rising Summon (0.01% - THE RARE ONE).mp4 */,
+			);
+			path = 03_Summon_Effects;
+			sourceTree = "<group>";
+		};
+		38F37FE9E3AA202E0324F684 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				D8FFF7CC037BACD2F84BA50C /* 1. Aetherion, the Eternal Sovereign (Ultra Legends Rising).jpg */,
+				C16C88AE6C899D3008387DA0 /* 2. Zorvath, the Reality Ender (Ultra).jpg */,
+				3B448326426794EEE92F28A5 /* 3. Lumina, the Genesis Angel (Ultra).jpg */,
+				77F29520993941B5850761DE /* Eternal_Summon_Full_Catalog_with_Sprites_and_Moves.xlsx */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		4275AC049B4E5123947A0269 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29F5CB19352F4A16322F4A6B /* characters.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45EB3E75E579A99F918F04B0 /* Ultra_Legends_Rising */ = {
+			isa = PBXGroup;
+			children = (
+				A38F67D3D6D02ED118E1D4CF /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg */,
+				661D8A9EA8A8B690276D9857 /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 */,
+				BB701192475882E836AE016D /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg */,
+				BD432C2DBC22E1B3E7A6A22B /* 02_Zorvath, Super Saiyan 5 Reality Ender.mp4 */,
+				BEF157CE737C45FEB79E0DB4 /* 03_Lumina, Super Saiyan 5 Genesis Angel.jpg */,
+				6D82673F248622E7DEBE465A /* 03_Lumina, Super Saiyan 5 Genesis Angel.mp4 */,
+				44255182719D025BC8CC5497 /* 04_Nyxus, Cloud God of Eternal Storms.jpg */,
+				BCD9647F3F84A58F29A6A6B8 /* 04_Nyxus, Cloud God of Eternal Storms.mp4 */,
+				86356BBBBC2B4FECC26C129A /* 05_Boreal, Crystal God of Eternal Light.jpg */,
+				848B1898E27DED64C3E00FC9 /* 05_Boreal, Crystal God of Eternal Light.mp4 */,
+				AC18195224F0F6DCDD4C2234 /* 06_Ignara, Time Lord of Infinite Cycles.jpg */,
+				6D4B2C42DF7F50F084F23929 /* 06_Ignara, Time Lord of Infinite Cycles.mp4 */,
+				B48424D6D782C9CE2EA82BE1 /* 07_Zorath, Frost Demon God of Absolute Zero.jpg */,
+				305DC23DDE94643F64D53B0C /* 07_Zorath, Frost Demon God of Absolute Zero.mp4 */,
+				B8328AA941C232FC18BA4C24 /* 08_Elara, Lightning Valkyrie of Eternal Thunder.jpg */,
+				40C2605B77DF5502B0A16ADB /* 08_Elara, Lightning Valkyrie of Eternal Thunder.mp4 */,
+				D15342F362EC3F77D4605BA0 /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg */,
+				7FF5FF90A4219CFFECA15444 /* 09_Boreal, Super Saiyan 15 Frost Titan.mp4 */,
+				3419B236D6D5F999E180AFA1 /* 10_Grakthar, Earth Titan God of Eternal Growth.jpg */,
+				9844BC981640803ACE73A2D2 /* 10_Grakthar, Earth Titan God of Eternal Growth.mp4 */,
+			);
+			path = Ultra_Legends_Rising;
+			sourceTree = "<group>";
+		};
+		55D5398CB4C0617322DF8000 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E3491F23469E0A6614031 /* SummonViewModel.swift */,
+				593ED021E0C73A8D04D6F8A1 /* TeamState.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		591EC0B469CC68071D8E5AB4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5C0E9C80902B87C481B78EEC /* CatalogService.swift */,
+				E045CD35E9EB51EB44EAE3CC /* EternalSummonPaths.swift */,
+				5FEE7420CB2B24118AA0ADE0 /* SummonEffectLibrary.swift */,
+				CC8896C58ED21963A95D69DA /* UltraLegendsRisingArt.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7E01FAE8D0DEF93A7FE8D720 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				681FBB9A6D23572D0F5EE575 /* GameCharacter.swift */,
+				EE4F1366FC40307E43C1DA18 /* Rarity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8780D2AD548671F9F55C08E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AEAD6EB74EA13C81476ECC73 /* Components */,
+				722764586D7038C8A70D4057 /* BattlePlaceholderView.swift */,
+				3EA1A9B988CEF63B8AD105CB /* CharacterDetailView.swift */,
+				E7A8906E378D143ABD3A4440 /* CollectionView.swift */,
+				9FCCA44916FC2E55239D33BB /* MainTabView.swift */,
+				09D7A4A03C1F5D400941447D /* SummonView.swift */,
+				20980A178742182153A2C0FC /* TeamBuilderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AC3E9487C08C249543928D14 /* Eternal_Summon_Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F9EE18DD0E4FB5E382E530D5 /* 01_Sprites */,
+				36A29468E645AD72119C9F27 /* 03_Summon_Effects */,
+				38F37FE9E3AA202E0324F684 /* Characters */,
+			);
+			path = Eternal_Summon_Assets;
+			sourceTree = "<group>";
+		};
+		AEAD6EB74EA13C81476ECC73 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B0ABEA31349FC13CB22A2E56 /* CharacterArtView.swift */,
+				BC59067CF19297F11434441E /* GrokSpritePlaceholder.swift */,
+				2CEA225D87ACE0E4D2DF8EB1 /* LocalBundledVideoView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C6022A56E6CB8FFFDA881ACF /* DragonEggX */ = {
+			isa = PBXGroup;
+			children = (
+				7E01FAE8D0DEF93A7FE8D720 /* Models */,
+				4275AC049B4E5123947A0269 /* Resources */,
+				591EC0B469CC68071D8E5AB4 /* Services */,
+				319AED923F3D8DF568D8854B /* Utils */,
+				55D5398CB4C0617322DF8000 /* ViewModels */,
+				A8780D2AD548671F9F55C08E /* Views */,
+				33A5C5D7F0D4FEC30397E805 /* Assets.xcassets */,
+				243D118C4F616330F16EAA87 /* DragonEggX.entitlements */,
+				1A5A889EE2676C87EE1343D8 /* DragonEggXApp.swift */,
+				B7B0C3028FFB10C071735C01 /* Info.plist */,
+			);
+			path = DragonEggX;
+			sourceTree = "<group>";
+		};
+		F06B7B6A3EB0027B9E24B098 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F08E1257A69C90F92EA31C45 /* DragonEggX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F86167F4FC84B288D8A1B251 = {
+			isa = PBXGroup;
+			children = (
+				C6022A56E6CB8FFFDA881ACF /* DragonEggX */,
+				AC3E9487C08C249543928D14 /* Eternal_Summon_Assets */,
+				F06B7B6A3EB0027B9E24B098 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9EE18DD0E4FB5E382E530D5 /* 01_Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				45EB3E75E579A99F918F04B0 /* Ultra_Legends_Rising */,
+			);
+			path = 01_Sprites;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5631AF4BB9630F4D4558CA10 /* DragonEggX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2C3617CD5F83FB0F7A11DE /* Build configuration list for PBXNativeTarget "DragonEggX" */;
+			buildPhases = (
+				507A3E058D8F96280EFD0292 /* Sources */,
+				9D5802FD500109060D4D8991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DragonEggX;
+			packageProductDependencies = (
+			);
+			productName = DragonEggX;
+			productReference = F08E1257A69C90F92EA31C45 /* DragonEggX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEA89E622D7B876DF1D8733A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 6A9BF6F43D6FF297F67B5AC3 /* Build configuration list for PBXProject "DragonEggX" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F86167F4FC84B288D8A1B251;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F06B7B6A3EB0027B9E24B098 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5631AF4BB9630F4D4558CA10 /* DragonEggX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D5802FD500109060D4D8991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFA73103230AD7A6981F9F4A /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg in Resources */,
+				1E5CB18B321A7F83DDE0B1AC /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 in Resources */,
+				8875B586E707718D823AB2BA /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg in Resources */,
+				E1AACF535AC2E718F0F0F1E6 /* 02_Zorvath, Super Saiyan 5 Reality Ender.mp4 in Resources */,
+				3D7FA80914B83607574A9E86 /* 03_Lumina, Super Saiyan 5 Genesis Angel.jpg in Resources */,
+				2C3C6FD718396F71AE801695 /* 03_Lumina, Super Saiyan 5 Genesis Angel.mp4 in Resources */,
+				DDEF1D35A7952D79F44BA1D2 /* 04_Nyxus, Cloud God of Eternal Storms.jpg in Resources */,
+				0119EBD6F5D2DE5DD839A22B /* 04_Nyxus, Cloud God of Eternal Storms.mp4 in Resources */,
+				09BD164841E7DE4CCC851E4C /* 05_Boreal, Crystal God of Eternal Light.jpg in Resources */,
+				4AAE0F65A85E0C4A8941828A /* 05_Boreal, Crystal God of Eternal Light.mp4 in Resources */,
+				9574BCF153F0B0CF709E056D /* 06_Ignara, Time Lord of Infinite Cycles.jpg in Resources */,
+				B5CC176BE434D9DCE185160B /* 06_Ignara, Time Lord of Infinite Cycles.mp4 in Resources */,
+				9E239EA4BFDF40C147252772 /* 07_Zorath, Frost Demon God of Absolute Zero.jpg in Resources */,
+				DAFACC324D97D8DD80172F2E /* 07_Zorath, Frost Demon God of Absolute Zero.mp4 in Resources */,
+				71EE8D66E74DCBC6F0F5795F /* 08_Elara, Lightning Valkyrie of Eternal Thunder.jpg in Resources */,
+				7E179F194F24E59A220AA83D /* 08_Elara, Lightning Valkyrie of Eternal Thunder.mp4 in Resources */,
+				C61B0D84174DDC683CEF5A9D /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg in Resources */,
+				8E8A45D964166564083478F4 /* 09_Boreal, Super Saiyan 15 Frost Titan.mp4 in Resources */,
+				96E1FFCE3AF19F22FF9E6DDD /* 1. Aetherion, the Eternal Sovereign (Ultra Legends Rising).jpg in Resources */,
+				3DE92916495EBCEE47A274E0 /* 10_Grakthar, Earth Titan God of Eternal Growth.jpg in Resources */,
+				27B289EF0C1350FE7A4F16A4 /* 10_Grakthar, Earth Titan God of Eternal Growth.mp4 in Resources */,
+				0AF8F06C9BE09F21F42A1E3A /* 2. Zorvath, the Reality Ender (Ultra).jpg in Resources */,
+				E4A875148958D7BA959B8167 /* 3. Lumina, the Genesis Angel (Ultra).jpg in Resources */,
+				10E2C58C351A70C77BCD9B77 /* Assets.xcassets in Resources */,
+				A3868EA5BCB89BFBF7372E7C /* Eternal_Summon_Full_Catalog_with_Sprites_and_Moves.xlsx in Resources */,
+				5D5AA9E7F3765A474B317E34 /* Extreme Summon.mp4 in Resources */,
+				684AFF3D29F7C8C7FD31AEEF /* Hero Summon (Common)1.mp4 in Resources */,
+				719275FFEE7C2F8782A99ECE /* LR (Legends Rising) Summon.mp4 in Resources */,
+				C7ED4559572798CCF9CE4C26 /* Sparking Summon.mp4 in Resources */,
+				27C8827E35886ECBCA071E8B /* Ultra Legends Rising Summon (0.01% - THE RARE ONE).mp4 in Resources */,
+				37DF9966D3AFB65E1C161BB0 /* characters.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		507A3E058D8F96280EFD0292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFE1D9E26423627716682217 /* BattlePlaceholderView.swift in Sources */,
+				994D42064500A957E331E719 /* CatalogService.swift in Sources */,
+				8954CE1D56DECC78FBCAB698 /* CharacterArtView.swift in Sources */,
+				852222567F94149D0961FDBC /* CharacterDetailView.swift in Sources */,
+				6AC0D0908ECF6BA4AB5D745B /* CollectionView.swift in Sources */,
+				AD92E9CACBB752BCA37E7878 /* DragonEggXApp.swift in Sources */,
+				972AC493D1734B5412D77151 /* EternalSummonPaths.swift in Sources */,
+				1372D0F40223B561317CA7FD /* GameCharacter.swift in Sources */,
+				083716D021EDEAF1EC204E54 /* GrokSpritePlaceholder.swift in Sources */,
+				DA929151037C3C2B1382B841 /* LocalBundledVideoView.swift in Sources */,
+				F1C3EDCB8809413A58E66C21 /* MainTabView.swift in Sources */,
+				4D266A530DD46E9BE3F0E3A1 /* NumberFormatting.swift in Sources */,
+				AC8D3AA07D5D0A6B36DDAEC8 /* Rarity.swift in Sources */,
+				45A9D51A494B9D5234974B4A /* SummonEffectLibrary.swift in Sources */,
+				D5803BBDE83EBAB4703DC7D4 /* SummonView.swift in Sources */,
+				1AE1AA3425206B1326D8341D /* SummonViewModel.swift in Sources */,
+				AF5F8116B5892D403D9F3E1E /* TeamBuilderView.swift in Sources */,
+				73C97101F32EF141EA9A346C /* TeamState.swift in Sources */,
+				74BE6CC6E6310F350A16539F /* UltraLegendsRisingArt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		655A01CBC0599D324A52B057 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DragonEggX/DragonEggX.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = DragonEggX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dragoneggx.DragonEggX;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A20D3B7D82ED66AA163A4665 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		BA35B37A8D2EE62A4E4603CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DragonEggX/DragonEggX.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = DragonEggX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dragoneggx.DragonEggX;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF19850D7EB80EA588DF4AFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C2C3617CD5F83FB0F7A11DE /* Build configuration list for PBXNativeTarget "DragonEggX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				655A01CBC0599D324A52B057 /* Debug */,
+				BA35B37A8D2EE62A4E4603CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6A9BF6F43D6FF297F67B5AC3 /* Build configuration list for PBXProject "DragonEggX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A20D3B7D82ED66AA163A4665 /* Debug */,
+				DF19850D7EB80EA588DF4AFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEA89E622D7B876DF1D8733A /* Project object */;
+}

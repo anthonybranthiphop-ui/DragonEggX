@@ -1,0 +1,18 @@
+🎥 5 Ready-to-Use Summon Animation Prompts (from the Excel)
+
+These are optimized for Grok Imagine / your game engine:
+
+Hero Summon (Common)
+"Epic gacha summon animation: A simple green energy capsule drops from the sky, cracks open with a bright green flash and confetti explosion. Basic 2D sprite of a Hero character pops out with a 'ding' sound. Clean, fast, satisfying common pull animation. Dragon Ball Legends style UI, vibrant, no lag, 4K quality."
+
+Extreme Summon
+"Gacha summon animation: A blue glowing capsule spins rapidly, explodes in a burst of blue light and electric sparks. The Extreme character sprite bursts forward with a powerful pose and energy wave. Screen shakes slightly. Premium feel, fast and exciting. Dragon Ball Legends inspired, high contrast, sharp particles."
+
+Sparking Summon
+"Spectacular gacha animation: Golden capsule descends with dramatic lighting, cracks with intense golden rays and flying sparks. The Sparking character emerges in a slow-motion powerful pose with massive golden aura explosion. Screen flashes, confetti of golden particles rains down. Cinematic, high energy, Dragon Ball Legends quality."
+
+LR (Legends Rising) Summon
+"Legendary gacha pull animation: Purple cosmic capsule materializes in a swirling galaxy portal. It shatters with a massive purple shockwave and floating ancient runes. The LR character appears in a god-like slow-motion entrance with legendary aura and screen-filling particle effects. Epic orchestral hit, reality distortion, ultra premium Dragon Ball Legends style."
+
+Ultra Legends Rising Summon (0.01% – THE ONE)
+"GOD-TIER summon animation for the 0.01% Ultra Legends Rising: The entire screen cracks like glass as a massive dimensional tear opens in the center. Reality warps, stars and galaxies swirl violently. A glowing red-and-gold capsule slowly emerges from the void, pulsing with overwhelming power. It explodes in a universe-shaking blast of light, Aetherion materializes in full god form with reality-bending aura, floating above a destroyed battlefield. Screen shakes violently, multiple shockwaves, god rays, floating ancient text 'DESTINY OVERRIDE', rainbow chromatic aberration, 10-second cinematic masterpiece, Dragon Ball Legends + Avengers Endgame portal quality, maximum epicness, make players scream when they see it."
