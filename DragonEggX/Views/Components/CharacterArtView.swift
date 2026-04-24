@@ -18,10 +18,24 @@ import UIKit
 struct CharacterArtView: View {
     let character: GameCharacter
     var showUltralLoop: Bool = false
+    /// When `true` (e.g. summon result), use bundle art only if the file is present; otherwise a deterministic `PulledCharacterFillerView`.
+    var usePulledFillerByDefault: Bool = false
 
     var body: some View {
         VStack(spacing: 0) {
-            if let u = UltraLegendsRisingArt.portraitURL(for: character) {
+            if usePulledFillerByDefault {
+                if let u = UltraLegendsRisingArt.presentablePortraitURLIfAvailable(for: character) {
+                    bundlePortrait(url: u)
+                } else if let u = CatalogGridArt.presentablePortraitURLIfAvailable(for: character) {
+                    bundlePortrait(url: u)
+                } else {
+                    PulledCharacterFillerView(character: character)
+                }
+            } else if let u = UltraLegendsRisingArt.presentablePortraitURLIfAvailable(for: character) {
+                bundlePortrait(url: u)
+            } else if let u = CatalogGridArt.presentablePortraitURLIfAvailable(for: character) {
+                bundlePortrait(url: u)
+            } else if let u = UltraLegendsRisingArt.portraitURL(for: character) {
                 bundlePortrait(url: u)
             } else {
                 GrokSpritePlaceholder(
@@ -32,7 +46,7 @@ struct CharacterArtView: View {
             }
 
             if showUltralLoop, let v = UltraLegendsRisingArt.characterLoopVideoURL(for: character) {
-                LocalBundledVideoView(url: v, loop: true)
+                LocalBundledVideoView(url: v, loop: true, fillsContainer: false)
                     .id(v)
                     .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))

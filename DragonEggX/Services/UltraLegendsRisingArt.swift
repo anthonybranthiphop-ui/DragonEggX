@@ -54,6 +54,13 @@ enum UltraLegendsRisingArt {
         return nil
     }
 
+    /// Catalog URL only when a file is actually in the app bundle (so callers can use deterministic filler when missing).
+    static func presentablePortraitURLIfAvailable(for character: GameCharacter) -> URL? {
+        guard let u = portraitURL(for: character) else { return nil }
+        if FileManager.default.fileExists(atPath: u.path) { return u }
+        return nil
+    }
+
     static func characterLoopVideoURL(for character: GameCharacter) -> URL? {
         guard character.rarity == .ascendantLegends else { return nil }
         if let slot = character.ulrAssetSlot, (1...roster.count).contains(slot) {

@@ -1,0 +1,56 @@
+# XcodeGen: https://github.com/yonaskolb/XcodeGen
+# Run: xcodegen generate
+
+name: DragonEggX
+options:
+  bundleIdPrefix: com.dragoneggx
+  deploymentTarget:
+    iOS: "18.0"
+    macOS: "15.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    GENERATE_INFOPLIST_FILE: YES
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+targets:
+  DragonEggX:
+    type: application
+    platform: auto
+    supportedDestinations: [iOS, macOS]
+    sources:
+      - path: DragonEggX
+      - path: Eternal_Summon_Assets
+        type: folderReference
+        buildPhase: resources
+        excludes:
+          - "**/~$*"
+          - "**/.DS_Store"
+    resources:
+      - path: DragonEggX/Resources/characters.json
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dragoneggx.DragonEggX
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: DragonEggX/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        LSApplicationCategoryType: public.app-category.games
+    entitlements:
+      path: DragonEggX/DragonEggX.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+
+schemes:
+  DragonEggX:
+    build:
+      targets:
+        DragonEggX: all
+    run:
+      config: Debug

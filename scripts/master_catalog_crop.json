@@ -1,0 +1,7 @@
+{
+  "comment": "Pixel crop of the 10x10 portrait grid (excludes title, side panels, legends). Tune if cells are misaligned.",
+  "x": 16,
+  "y": 48,
+  "width": 604,
+  "height": 532
+}

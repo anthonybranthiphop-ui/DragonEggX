@@ -69,53 +69,31 @@ struct SummonView: View {
 
     @ViewBuilder
     private var summonAnimationPanel: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(LinearGradient(
-                    colors: summon.isAnimating
-                        ? [.purple.opacity(0.5), .blue.opacity(0.6)]
-                        : [.black.opacity(0.4), .indigo.opacity(0.3)],
-                    startPoint: .topLeading, endPoint: .bottomTrailing
-                ))
-                .frame(height: 220)
-            if summon.isAnimating, let pick = summon.activePull,
-               let u = SummonEffectLibrary.videoURL(for: pick.rarity) {
-                LocalBundledVideoView(url: u, loop: false)
-                    .id(summon.summonVfxSession)
-                    .frame(height: 200)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-            } else if summon.isAnimating {
-                ProgressView()
-            } else {
-                VStack(spacing: 8) {
-                    Image(systemName: "flame.fill")
-                        .font(.system(size: 48))
-                        .symbolEffect(.pulse, value: summon.animationPhase)
-                    Text("Eternal_Summon_Assets/03_Summon_Effects — tier MP4s")
-                        .font(.caption2)
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.white.opacity(0.85))
-                }
-            }
-        }
-        .overlay(alignment: .bottom) {
+        Group {
             if summon.isAnimating {
-                Text(phaseText)
-                    .font(.caption.weight(.semibold))
-                    .padding(8)
-                    .background(.ultraThinMaterial, in: Capsule())
-                    .padding(.bottom, 6)
+                Color.clear
+                    .frame(height: 220)
+                    .accessibilityHidden(true)
+            } else {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        .fill(LinearGradient(
+                            colors: [.black.opacity(0.4), .indigo.opacity(0.3)],
+                            startPoint: .topLeading, endPoint: .bottomTrailing
+                        ))
+                        .frame(height: 220)
+                    VStack(spacing: 8) {
+                        Image(systemName: "flame.fill")
+                            .font(.system(size: 48))
+                            .symbolEffect(.pulse, value: summon.animationPhase)
+                        Text("Eternal_Summon_Assets/03_Summon_Effects — tier MP4s")
+                            .font(.caption2)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.white.opacity(0.85))
+                    }
+                }
+                .padding(.horizontal)
             }
-        }
-        .padding(.horizontal)
-    }
-
-    private var phaseText: String {
-        switch summon.animationPhase {
-        case "charge": return "Charging…"
-        case "vfx": return "Eternal Summon VFX (bundled MP4)…"
-        case "reveal": return "Reveal!"
-        default: return "Summoning…"
         }
     }
 
@@ -129,7 +107,7 @@ struct SummonView: View {
                 showDetail = c
             } label: {
                 HStack(spacing: 16) {
-                    CharacterArtView(character: c, showUltralLoop: false)
+                    CharacterArtView(character: c, showUltralLoop: false, usePulledFillerByDefault: true)
                         .frame(width: 120, height: 180)
                     VStack(alignment: .leading) {
                         Text(c.name)
