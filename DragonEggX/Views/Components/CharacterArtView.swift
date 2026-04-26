@@ -2,9 +2,8 @@
 //  CharacterArtView.swift
 //  Dragon Egg X
 //
-//  Prefers **bundled** ULR art when `ULR_Asset_Slot` or `Name` matches the ULR roster;
-//  otherwise falls back to the Grok Imagine placeholder.
-//  Local files load via `NSImage`/`UIImage` (reliable for bundle `file://` URLs).
+//  Prefers bundled stills via `CharacterAssetResolver`, then legacy ULR roster JPGs,
+//  then catalog grid slices, then Grok placeholder.
 //
 
 import SwiftUI
@@ -18,19 +17,35 @@ import UIKit
 struct CharacterArtView: View {
     let character: GameCharacter
     var showUltralLoop: Bool = false
-    /// When `true` (e.g. summon result), use bundle art only if the file is present; otherwise a deterministic `PulledCharacterFillerView`.
+    /// When `true` (e.g. summon result), use bundle art only if the file is present; otherwise `PulledCharacterFillerView`.
     var usePulledFillerByDefault: Bool = false
+
+    @Environment(CharacterVariantStore.self) private var variantStore
+
+    private var effectiveVariantId: String {
+        variantStore.selectedVariantId(for: character.id)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             if usePulledFillerByDefault {
-                if let u = UltraLegendsRisingArt.presentablePortraitURLIfAvailable(for: character) {
+                if let u = CharacterAssetResolver.presentablePortraitURL(
+                    for: character,
+                    effectiveVariantId: effectiveVariantId
+                ) {
+                    bundlePortrait(url: u)
+                } else if let u = UltraLegendsRisingArt.presentablePortraitURLIfAvailable(for: character) {
                     bundlePortrait(url: u)
                 } else if let u = CatalogGridArt.presentablePortraitURLIfAvailable(for: character) {
                     bundlePortrait(url: u)
                 } else {
                     PulledCharacterFillerView(character: character)
                 }
+            } else if let u = CharacterAssetResolver.presentablePortraitURL(
+                for: character,
+                effectiveVariantId: effectiveVariantId
+            ) {
+                bundlePortrait(url: u)
             } else if let u = UltraLegendsRisingArt.presentablePortraitURLIfAvailable(for: character) {
                 bundlePortrait(url: u)
             } else if let u = CatalogGridArt.presentablePortraitURLIfAvailable(for: character) {
@@ -45,8 +60,8 @@ struct CharacterArtView: View {
                 )
             }
 
-            if showUltralLoop, let v = UltraLegendsRisingArt.characterLoopVideoURL(for: character) {
-                LocalBundledVideoView(url: v, loop: true, fillsContainer: false)
+            if showUltralLoop, let v = CharacterAssetResolver.characterIdleOrLoopVideoURL(for: character) {
+                LocalBundledVideoView(url: v, loop: true, fillsContainer: false, preserveAudioPitchAtAlteredRate: true)
                     .id(v)
                     .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))

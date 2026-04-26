@@ -7,16 +7,42 @@
       "Type": "Namek (Awakened)",
       "PowerLevel": 538052161943,
       "Sprite_Prompt": "2D anime game sprite, Dragon Ball Legends style: AF Titan 001 \u2014 charging galick pose. Glowing ultra god ki aura, white transparent background, no text, game-ready.",
-      "Move1_Name": "Strike",
-      "Move1_Desc": "A focused ki-enhanced body blow.",
-      "Move2_Name": "Ki Lance",
-      "Move2_Desc": "Fires a thin piercing beam. High accuracy.",
-      "Move3_Name": "Ultimate Driver",
-      "Move3_Desc": "Signature combo that pierces guard at high ki.",
-      "Move4_Name": "Overdrive Finisher",
-      "Move4_Desc": "Screen-filling finisher. Costs massive ki.",
+      "Move1_Name": "Sovereign Starbreak",
+      "Move1_Desc": "A collapsing beam of sovereign ki that shreds guard.",
+      "Move2_Name": "Eternal Judgment Ray",
+      "Move2_Desc": "A purifying lance of infinite range.",
+      "Move3_Name": "Crown of Collapsing Suns",
+      "Move3_Desc": "Stellar rings detonate in chained novas.",
+      "Move4_Name": "Genesis Override",
+      "Move4_Desc": "Reality rewrites in your favor \u2014 apocalyptic finisher.",
       "IsPuny": false,
-      "ULR_Asset_Slot": 1
+      "ULR_Asset_Slot": 1,
+      "Sprite_Folder": "Aetherion",
+      "Asset_File_Name": "char_001_Aetherion_the_Eternal_Sovereign",
+      "Move_Video_Files": [
+        "anim_001_m1_aetherion_destiny_override_v001.mp4",
+        "",
+        "",
+        ""
+      ],
+      "Variants": [
+        {
+          "ID": "base",
+          "DisplayName": "Eternal Sovereign",
+          "Subtitle": "New still",
+          "Asset_File_Name": "char_001_Aetherion_the_Eternal_Sovereign.png",
+          "IsBonus": false,
+          "IsUnlocked": true
+        },
+        {
+          "ID": "classic",
+          "DisplayName": "Legends (Classic)",
+          "Subtitle": "Prior roster art",
+          "Asset_File_Name": "01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg",
+          "IsBonus": true,
+          "IsUnlocked": true
+        }
+      ]
     },
     {
       "ID": "DEGX-0002",
@@ -25,16 +51,42 @@
       "Type": "Chrono Realm",
       "PowerLevel": 191320900468,
       "Sprite_Prompt": "2D anime game sprite, Dragon Ball Legends style: AF Titan 002 \u2014 legendary finisher. Glowing crimson ki aura, white transparent background, no text, game-ready.",
-      "Move1_Name": "Strike",
-      "Move1_Desc": "A focused ki-enhanced body blow.",
-      "Move2_Name": "Ki Lance",
-      "Move2_Desc": "Fires a thin piercing beam. High accuracy.",
-      "Move3_Name": "Ultimate Driver",
-      "Move3_Desc": "Signature combo that pierces guard at high ki.",
-      "Move4_Name": "Overdrive Finisher",
-      "Move4_Desc": "Screen-filling finisher. Costs massive ki.",
+      "Move1_Name": "Reality Ender Cannon",
+      "Move1_Desc": "A cannon of pure void that deletes cover.",
+      "Move2_Name": "Void Tyrant Rush",
+      "Move2_Desc": "A blitz of tyrant fists and afterimages.",
+      "Move3_Name": "Dimension Shatter Roar",
+      "Move3_Desc": "A roar that cracks space into lethal shards.",
+      "Move4_Name": "Oblivion Final Eclipse",
+      "Move4_Desc": "A terminal eclipse that ends the exchange.",
       "IsPuny": false,
-      "ULR_Asset_Slot": 2
+      "ULR_Asset_Slot": 2,
+      "Sprite_Folder": "Zorvath",
+      "Asset_File_Name": "char_002_Zorvath_the_Reality_Ender",
+      "Move_Video_Files": [
+        "anim_002_m1_void_dragon_call_af_v001.mp4",
+        "",
+        "",
+        ""
+      ],
+      "Variants": [
+        {
+          "ID": "base",
+          "DisplayName": "Reality Ender",
+          "Subtitle": "New still",
+          "Asset_File_Name": "char_002_Zorvath_the_Reality_Ender.png",
+          "IsBonus": false,
+          "IsUnlocked": true
+        },
+        {
+          "ID": "classic",
+          "DisplayName": "Legends (Classic)",
+          "Subtitle": "Prior roster art",
+          "Asset_File_Name": "02_Zorvath, Super Saiyan 5 Reality Ender.jpg",
+          "IsBonus": true,
+          "IsUnlocked": true
+        }
+      ]
     },
     {
       "ID": "DEGX-0003",

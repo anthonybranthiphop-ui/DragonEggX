@@ -130,15 +130,23 @@ final class BattleCoordinator {
             source: .player,
             target: .enemy,
             kind: move.animationKind,
-            impactToken: UUID()
+            impactToken: UUID(),
+            vfxRarity: move.rarity,
+            displayName: move.name
         )
         activeAnimation = playerCue
 
-        // Optional video: visual only; battle never depends on onPlayToEnd
-        if let p = vfxContext?.player, let u = UltraLegendsRisingArt.characterLoopVideoURL(for: p) {
-            lastVFX = .attackVideo(u, session: session, cue: playerCue.id)
-        } else if move.animationKind == .ultimate {
-            lastVFX = .ultimateFinisher
+        // Optional video: per-move first, then idle loop. SwiftUI VFX still runs if nil.
+        if let p = vfxContext?.player {
+            if let u = CharacterAssetResolver.battleMoveVideoURL(for: p, moveSlot: move.slotIndex) {
+                lastVFX = .attackVideo(u, session: session, cue: playerCue.id)
+            } else if let u = CharacterAssetResolver.characterIdleOrLoopVideoURL(for: p) {
+                lastVFX = .attackVideo(u, session: session, cue: playerCue.id)
+            } else if move.animationKind == .ultimate {
+                lastVFX = .ultimateFinisher
+            } else {
+                lastVFX = nil
+            }
         } else {
             lastVFX = nil
         }
@@ -210,13 +218,21 @@ final class BattleCoordinator {
             source: .enemy,
             target: .player,
             kind: em.animationKind,
-            impactToken: UUID()
+            impactToken: UUID(),
+            vfxRarity: em.rarity,
+            displayName: em.name
         )
         activeAnimation = enemyCue
-        if let e = vfxContext?.enemy, let u = UltraLegendsRisingArt.characterLoopVideoURL(for: e) {
-            lastVFX = .attackVideo(u, session: session, cue: enemyCue.id)
-        } else if em.animationKind == .ultimate {
-            lastVFX = .ultimateFinisher
+        if let e = vfxContext?.enemy {
+            if let u = CharacterAssetResolver.battleMoveVideoURL(for: e, moveSlot: em.slotIndex) {
+                lastVFX = .attackVideo(u, session: session, cue: enemyCue.id)
+            } else if let u = CharacterAssetResolver.characterIdleOrLoopVideoURL(for: e) {
+                lastVFX = .attackVideo(u, session: session, cue: enemyCue.id)
+            } else if em.animationKind == .ultimate {
+                lastVFX = .ultimateFinisher
+            } else {
+                lastVFX = nil
+            }
         } else {
             lastVFX = nil
         }
@@ -240,7 +256,9 @@ final class BattleCoordinator {
                 source: .player,
                 target: .player,
                 kind: .dodge,
-                impactToken: UUID()
+                impactToken: UUID(),
+                vfxRarity: pl2.rarity,
+                displayName: "Dodge"
             )
             activeAnimation = dodgeCue
             lastVFX = .dodgeReaction("Dodge")

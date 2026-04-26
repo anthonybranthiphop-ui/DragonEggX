@@ -716,3 +716,15 @@ Build the **simplest scalable version that compiles cleanly and can grow**.
 Do not underbuild it into a disposable mockup.  
 Do not overbuild it into a bloated architecture fantasy.  
 Aim for clean, extensible, premium-minded foundations.
+
+---
+
+## Addendum: Canonical assets + catalog (2026-04-26)
+
+**Backup of this file before this addendum:** `docs/backups/DRAGON_EGG_X_MASTER_CONTEXT.md.bak-20260426-093805.md`
+
+- **Canonical asset root:** `Eternal_Summon_Assets/` (see `docs/CANONICAL_ASSET_MAP.md` for the full folder map, including `00_Source` variants, `01_Sprites`, `02_Animations`, `03_Summon_Effects`, `04_Final_Exports`, `Characters/`, and catalog locations).
+- **`01_Sprites`** holds **approved still PNGs only**; **no** final **video** deliverables in that tree — videos belong under `02_Animations/…` (per-character **Moves** or **Title_Cards**) or `03_Summon_Effects/` for rarity summon VFX.
+- **Authoring XLSX** lives under **`catalog/master/`** (file name may vary; confirm the active workbook before bulk edits). **`catalog/exports/`** is **generated** pipeline output and audits — not a substitute for the spreadsheet, but the normal place for CSV/JSON sync artifacts.
+- **Runtime app catalog:** `DragonEggX/Resources/characters.json` (bundled; not the XLSX at runtime).
+- **Title-card *source* preview policy:** The procedural 9:16 title-card *source* preview pass is **paused** — current previews are **not** production quality. **Do not** feed those previews to Grok as production title-card animatics. A future pass should use **full cinematic 9:16** card art, saved directly into canonical `Title_Card_Sources` / `Title_Cards` once paths and `catalog/exports` + master columns are aligned. Details: `docs/TITLE_CARD_SOURCE_PREVIEW_REVIEW.md` and `docs/ASSET_REGENERATION_PLAN.md`.

@@ -2,7 +2,7 @@
 //  BattleAttackEffectView.swift
 //  Dragon Egg X
 //
-//  SwiftUI-only attack feedback; does not require bundled video.
+//  SwiftUI attack feedback; does not require bundled video. Rarity sets intensity.
 //
 
 import SwiftUI
@@ -14,84 +14,151 @@ struct BattleAttackEffectView: View {
 
     @State private var phase: CGFloat = 0
     @State private var burst = false
+    @State private var shake: CGFloat = 0
 
     var body: some View {
         ZStack {
-            if cue.kind == .ultimate {
+            // Flash / beam wash — stronger for higher rarities
+            if cue.kind == .ultimate || tierIntensity >= 3 {
                 RadialGradient(
-                    colors: [.white.opacity(0.55 - phase * 0.4), .clear],
+                    colors: [flashColor.opacity(0.5 - phase * 0.35), .clear],
                     center: .center,
                     startRadius: 0,
-                    endRadius: 280 + phase * 80
+                    endRadius: 120 + CGFloat(tierIntensity) * 40 + phase * 80
                 )
                 .ignoresSafeArea()
-                .opacity(burst ? 0.7 : 0.15)
+                .opacity(burst ? 0.65 : 0.12)
             }
 
-            energyProjectile
+            if cue.kind == .dodge { dodgeLayer }
 
-            if cue.kind == .strike {
-                Path { p in
-                    p.move(to: CGPoint(x: 0, y: 60))
-                    p.addLine(to: CGPoint(x: 120, y: 20))
-                }
-                .stroke(.white.opacity(0.85), lineWidth: 3)
-                .offset(x: -40 + 160 * phase, y: 20 * sin(phase * .pi))
-                .shadow(color: .cyan.opacity(0.8), radius: 4)
+            if cue.kind == .strike || (cue.kind == .energyBlast && tierIntensity >= 2) {
+                strikeLayer
             }
 
-            if cue.kind == .dodge {
-                HStack {
-                    ForEach(0..<2, id: \.self) { i in
-                        Image(systemName: "wind")
-                            .font(.title)
-                            .foregroundStyle(.mint.opacity(0.75 - Double(i) * 0.25))
-                            .offset(x: (i == 0 ? 1 : -1) * (12 + 14 * phase))
-                            .opacity(0.4 + 0.4 * (1 - phase))
-                    }
-                }
+            if cue.kind == .energyBlast || cue.kind == .ultimate { energyOrb }
+
+            if tierIntensity >= 1 {
+                Rectangle()
+                    .fill(
+                        LinearGradient(
+                            colors: [accent.opacity(0.0), accent.opacity(0.35 * phase), accent.opacity(0.0)],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .ignoresSafeArea()
+                    .allowsHitTesting(false)
             }
         }
+        .offset(x: shake)
         .allowsHitTesting(false)
         .onAppear { run() }
     }
 
+    private var flashColor: Color {
+        switch cue.vfxRarity {
+        case .ultraLegendsRising: return .white
+        case .ultra: return .orange
+        case .lr: return .purple
+        case .sparking: return .yellow
+        case .hero: return .green
+        }
+    }
+
+    private var accent: Color { cue.vfxRarity.glowColor }
+
+    private var tierIntensity: Int {
+        switch cue.vfxRarity {
+        case .hero: return 0
+        case .sparking: return 1
+        case .lr: return 2
+        case .ultra: return 3
+        case .ultraLegendsRising: return 4
+        }
+    }
+
+    private var strikeLayer: some View {
+        let count = tierIntensity >= 3 ? 3 : 1
+        return ZStack {
+            ForEach(0..<count, id: \.self) { i in
+                strikePath(index: i)
+            }
+        }
+    }
+
+    private func strikePath(index i: Int) -> some View {
+        let y0: CGFloat = 50 + CGFloat(i) * 8
+        let y1: CGFloat = 8 + CGFloat(i) * 6
+        let lineColor = (tierIntensity >= 2) ? Color.white : flashColor
+        let wobble = 18 * sin(phase * .pi + CGFloat(i) * 0.3)
+        return Path { p in
+            p.move(to: CGPoint(x: 0, y: y0))
+            p.addLine(to: CGPoint(x: 140, y: y1))
+        }
+        .stroke(lineColor.opacity(0.75 + 0.2 * phase), lineWidth: 2)
+        .offset(
+            x: -50 + 180 * phase + CGFloat(i) * 6,
+            y: wobble
+        )
+        .shadow(color: accent.opacity(0.6), radius: tierIntensity >= 2 ? 6 : 2)
+    }
+
     @ViewBuilder
-    private var energyProjectile: some View {
-        if cue.kind == .energyBlast || cue.kind == .ultimate {
-            Circle()
-                .fill(
-                    RadialGradient(
-                        colors: [cue.kind == .ultimate ? .yellow : .cyan, .clear],
-                        center: .center,
-                        startRadius: 2,
-                        endRadius: 32
-                    )
+    private var energyOrb: some View {
+        let scale = 1.0 + CGFloat(tierIntensity) * 0.1
+        Circle()
+            .fill(
+                RadialGradient(
+                    colors: [cue.kind == .ultimate ? Color.yellow : accent, .clear],
+                    center: .center,
+                    startRadius: 2,
+                    endRadius: 18 + CGFloat(tierIntensity) * 6
                 )
-                .frame(width: 48, height: 48)
-                .blur(radius: cue.kind == .ultimate ? 1 : 0.5)
-                .offset(energyOffset)
-                .scaleEffect(cue.kind == .ultimate && burst ? 1.25 : 1.0)
+            )
+            .frame(width: 56 * scale, height: 56 * scale)
+            .blur(radius: tierIntensity >= 3 ? 1.2 : 0.6)
+            .offset(energyOffset)
+            .scaleEffect(cue.kind == .ultimate && burst ? 1.3 : 1.0)
+    }
+
+    @ViewBuilder
+    private var dodgeLayer: some View {
+        HStack {
+            ForEach(0..<2, id: \.self) { i in
+                Image(systemName: "wind")
+                    .font(.title2)
+                    .foregroundStyle(.mint.opacity(0.8 - Double(i) * 0.25))
+                    .offset(x: (i == 0 ? 1 : -1) * (14 + 16 * phase))
+                    .opacity(0.4 + 0.45 * (1 - phase))
+            }
         }
     }
 
     private var energyOffset: CGSize {
         let t = (cue.source == .player) ? phase : 1 - phase
         return CGSize(
-            width: (t - 0.5) * 200,
-            height: sin(phase * .pi * 1.2) * 20
+            width: (t - 0.5) * 220,
+            height: sin(phase * .pi * 1.2) * 18
         )
     }
 
     private func run() {
         phase = 0
         burst = false
+        shake = 0
+        if tierIntensity >= 2 {
+            withAnimation(.spring(response: 0.1, dampingFraction: 0.4)) { shake = 6 }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
+                withAnimation { shake = 0 }
+            }
+        }
         if cue.kind == .dodge {
             withAnimation(.easeOut(duration: 0.22)) { phase = 1 }
         } else {
-            withAnimation(.easeInOut(duration: 0.45)) { phase = 1 }
+            withAnimation(.easeInOut(duration: 0.48)) { phase = 1 }
         }
-        if cue.kind == .ultimate {
+        if cue.kind == .ultimate || tierIntensity >= 4 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 withAnimation(.spring(response: 0.2, dampingFraction: 0.5)) { burst = true }
             }

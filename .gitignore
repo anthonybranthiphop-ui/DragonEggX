@@ -1,7 +1,27 @@
 .DS_Store
-**/.DS_Store
-.derived_*
-.verify_derived_data
-build/
+
+# Xcode local/user state
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
 DerivedData/
-**/~$*.xlsx
+build/
+XcodeBuildData/
+
+# Build/export artifacts
+*.ipa
+*.xcarchive
+*.dSYM.zip
+
+# Secrets/certificates
+.env
+*.p8
+*.cer
+*.mobileprovision
+
+# Python/cache junk
+__pycache__/
+*.pyc
+
+# Temporary project backups
+project.yml.backup.*

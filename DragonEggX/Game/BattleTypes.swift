@@ -39,6 +39,8 @@ struct BattleMove: Identifiable, Equatable, Sendable, Hashable {
     var slotIndex: Int
     var name: String
     var description: String
+    /// From master sheet / catalog — ready for when Grok MP4s ship.
+    var animationPrompt: String
     var power: Int
     var moveTypeLabel: String
     var rarity: Rarity
@@ -139,4 +141,7 @@ struct BattleAnimationCue: Identifiable, Equatable, Sendable, Hashable {
     let target: BattleSide
     let kind: BattleAnimationKind
     let impactToken: UUID
+    /// Drives `BattleAttackEffectView` intensity tier.
+    let vfxRarity: Rarity
+    let displayName: String
 }

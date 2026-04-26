@@ -11,7 +11,7 @@ enum BattleDemoRoster: Sendable {
     static let dominus = GameCharacter(
         id: "demo_dominus",
         name: "Dominus",
-        rarity: .limitLegend,
+        rarity: .lr,
         type: "Light",
         powerLevel: 1_200,
         spritePrompt: "Dominus, radiant draconic guardian, light aura, anime.",
@@ -30,7 +30,7 @@ enum BattleDemoRoster: Sendable {
     static let duogringo = GameCharacter(
         id: "demo_duogringo",
         name: "Duogringo",
-        rarity: .sparkflare,
+        rarity: .sparking,
         type: "Dark",
         powerLevel: 800,
         spritePrompt: "Duogringo, comedic two-headed tutor-like foe, dark green accents, anime chibi-epic.",

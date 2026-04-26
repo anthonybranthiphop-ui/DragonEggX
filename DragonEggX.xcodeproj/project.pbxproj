@@ -139,6 +139,13 @@
 		BEA31743103E0F373B68F590 /* MasterCatalog_77.png in Resources */ = {isa = PBXBuildFile; fileRef = 005D3899A115491C5FB51314 /* MasterCatalog_77.png */; };
 		BFA73103230AD7A6981F9F4A /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg in Resources */ = {isa = PBXBuildFile; fileRef = A38F67D3D6D02ED118E1D4CF /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg */; };
 		C109A35E6C577ACA3271A4D0 /* PulledCharacterFillerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA5B8156FDCB6FBE59F58D /* PulledCharacterFillerView.swift */; };
+		F0A0C001D3A4B65E1C10C0AB /* anim_001_m1_aetherion_destiny_override_v001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F0A0C002D3A4B65E1C10C0AB /* anim_001_m1_aetherion_destiny_override_v001.mp4 */; };
+		F0A0C003D3A4B65E1C10C0AB /* anim_002_m1_void_dragon_call_af_v001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F0A0C004D3A4B65E1C10C0AB /* anim_002_m1_void_dragon_call_af_v001.mp4 */; };
+		F0A0C005D3A4B65E1C10C0AB /* char_001_Aetherion_the_Eternal_Sovereign.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A0C006D3A4B65E1C10C0AB /* char_001_Aetherion_the_Eternal_Sovereign.png */; };
+		F0A0C007D3A4B65E1C10C0AB /* char_002_Zorvath_the_Reality_Ender.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A0C008D3A4B65E1C10C0AB /* char_002_Zorvath_the_Reality_Ender.png */; };
+		F0A0C009D3A4B65E1C10C0AB /* CharacterAssetResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0C00AD3A4B65E1C10C0AB /* CharacterAssetResolver.swift */; };
+		F0A0C00BD3A4B65E1C10C0AB /* CharacterVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0C00CD3A4B65E1C10C0AB /* CharacterVariant.swift */; };
+		F0A0C00DD3A4B65E1C10C0AB /* CharacterVariantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0C00ED3A4B65E1C10C0AB /* CharacterVariantStore.swift */; };
 		C178D2604D613C5AD08EB427 /* MasterCatalog_82.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B5E8A978B981531751275C0 /* MasterCatalog_82.png */; };
 		C389205BD5AA3D64E4DB31FA /* MasterCatalog_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 23C6C775F09672F0939A3A7F /* MasterCatalog_64.png */; };
 		C61B0D84174DDC683CEF5A9D /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D15342F362EC3F77D4605BA0 /* 09_Boreal, Super Saiyan 15 Frost Titan.jpg */; };
@@ -294,6 +301,13 @@
 		B7B0C3028FFB10C071735C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B8328AA941C232FC18BA4C24 /* 08_Elara, Lightning Valkyrie of Eternal Thunder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "08_Elara, Lightning Valkyrie of Eternal Thunder.jpg"; sourceTree = "<group>"; };
 		B8A82C702B45E52D840EA6E6 /* CharacterProgression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProgression.swift; sourceTree = "<group>"; };
+		F0A0C002D3A4B65E1C10C0AB /* anim_001_m1_aetherion_destiny_override_v001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = anim_001_m1_aetherion_destiny_override_v001.mp4; sourceTree = "<group>"; };
+		F0A0C004D3A4B65E1C10C0AB /* anim_002_m1_void_dragon_call_af_v001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = anim_002_m1_void_dragon_call_af_v001.mp4; sourceTree = "<group>"; };
+		F0A0C006D3A4B65E1C10C0AB /* char_001_Aetherion_the_Eternal_Sovereign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = char_001_Aetherion_the_Eternal_Sovereign.png; sourceTree = "<group>"; };
+		F0A0C008D3A4B65E1C10C0AB /* char_002_Zorvath_the_Reality_Ender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = char_002_Zorvath_the_Reality_Ender.png; sourceTree = "<group>"; };
+		F0A0C00AD3A4B65E1C10C0AB /* CharacterAssetResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAssetResolver.swift; sourceTree = "<group>"; };
+		F0A0C00CD3A4B65E1C10C0AB /* CharacterVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterVariant.swift; sourceTree = "<group>"; };
+		F0A0C00ED3A4B65E1C10C0AB /* CharacterVariantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterVariantStore.swift; sourceTree = "<group>"; };
 		BB0A3DB3F7F2BED3870191DE /* MasterCatalog_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MasterCatalog_24.png; sourceTree = "<group>"; };
 		BB701192475882E836AE016D /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "02_Zorvath, Super Saiyan 5 Reality Ender.jpg"; sourceTree = "<group>"; };
 		BC59067CF19297F11434441E /* GrokSpritePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrokSpritePlaceholder.swift; sourceTree = "<group>"; };
@@ -396,9 +410,29 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F0A0C0F0D3A4B65E1C10C0AB /* Aetherion */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0C002D3A4B65E1C10C0AB /* anim_001_m1_aetherion_destiny_override_v001.mp4 */,
+				F0A0C006D3A4B65E1C10C0AB /* char_001_Aetherion_the_Eternal_Sovereign.png */,
+			);
+			path = Aetherion;
+			sourceTree = "<group>";
+		};
+		F0A0C0F1D3A4B65E1C10C0AB /* Zorvath */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0C004D3A4B65E1C10C0AB /* anim_002_m1_void_dragon_call_af_v001.mp4 */,
+				F0A0C008D3A4B65E1C10C0AB /* char_002_Zorvath_the_Reality_Ender.png */,
+			);
+			path = Zorvath;
+			sourceTree = "<group>";
+		};
 		45EB3E75E579A99F918F04B0 /* Ultra_Legends_Rising */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0C0F0D3A4B65E1C10C0AB /* Aetherion */,
+				F0A0C0F1D3A4B65E1C10C0AB /* Zorvath */,
 				A38F67D3D6D02ED118E1D4CF /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg */,
 				661D8A9EA8A8B690276D9857 /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 */,
 				BB701192475882E836AE016D /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg */,
@@ -428,6 +462,7 @@
 			children = (
 				9EAB6CEB97614DE1F881628E /* BattleCoordinator.swift */,
 				CDCA0DDE78061635A6672E6C /* BattleServices.swift */,
+				F0A0C00ED3A4B65E1C10C0AB /* CharacterVariantStore.swift */,
 				9BCD5F52C412AA65B48B8138 /* PlayerBattleProgress.swift */,
 				2A9E3491F23469E0A6614031 /* SummonViewModel.swift */,
 				593ED021E0C73A8D04D6F8A1 /* TeamState.swift */,
@@ -438,6 +473,7 @@
 		591EC0B469CC68071D8E5AB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0C00AD3A4B65E1C10C0AB /* CharacterAssetResolver.swift */,
 				CD2BE0C51D760ED72F4F774D /* CatalogGridArt.swift */,
 				5C0E9C80902B87C481B78EEC /* CatalogService.swift */,
 				E045CD35E9EB51EB44EAE3CC /* EternalSummonPaths.swift */,
@@ -653,6 +689,7 @@
 			children = (
 				ED38802FF9A71EA22B45DEDC /* BattleDemoRoster.swift */,
 				B3CFFA65655DB77B5D2710D7 /* BattleEngine.swift */,
+				F0A0C00CD3A4B65E1C10C0AB /* CharacterVariant.swift */,
 				E0CD7BEA09ED862D21A31529 /* BattleRNG.swift */,
 				E4815F1DA36411601DC8733A /* BattleTypes.swift */,
 			);
@@ -713,6 +750,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A0C005D3A4B65E1C10C0AB /* char_001_Aetherion_the_Eternal_Sovereign.png in Resources */,
+				F0A0C001D3A4B65E1C10C0AB /* anim_001_m1_aetherion_destiny_override_v001.mp4 in Resources */,
+				F0A0C007D3A4B65E1C10C0AB /* char_002_Zorvath_the_Reality_Ender.png in Resources */,
+				F0A0C003D3A4B65E1C10C0AB /* anim_002_m1_void_dragon_call_af_v001.mp4 in Resources */,
 				BFA73103230AD7A6981F9F4A /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).jpg in Resources */,
 				1E5CB18B321A7F83DDE0B1AC /* 01_Aetherion, Super Saiyan 5 Eternal Sovereign (Legends Limited).mp4 in Resources */,
 				8875B586E707718D823AB2BA /* 02_Zorvath, Super Saiyan 5 Reality Ender.jpg in Resources */,
@@ -860,6 +901,9 @@
 				525B901BCD07288526F5F090 /* BattleCoordinator.swift in Sources */,
 				5634D8764EE3C47ED7D0F9F1 /* BattleDemoRoster.swift in Sources */,
 				2003FEBB0E7E54D4396240B1 /* BattleEngine.swift in Sources */,
+				F0A0C00BD3A4B65E1C10C0AB /* CharacterVariant.swift in Sources */,
+				F0A0C009D3A4B65E1C10C0AB /* CharacterAssetResolver.swift in Sources */,
+				F0A0C00DD3A4B65E1C10C0AB /* CharacterVariantStore.swift in Sources */,
 				243B187B9111DB5CAC742B4D /* BattleHPBar.swift in Sources */,
 				20E266F1BD5BCBCBA9224C78 /* BattleLessonChrome.swift in Sources */,
 				AFE1D9E26423627716682217 /* BattlePlaceholderView.swift in Sources */,

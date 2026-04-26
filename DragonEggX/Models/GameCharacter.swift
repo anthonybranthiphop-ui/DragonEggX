@@ -31,8 +31,21 @@ struct GameCharacter: Identifiable, Codable, Hashable, Sendable {
 
     /// `true` for the 20 “puny” joke units — used for gags / filters, not a separate rarity.
     var isPuny: Bool
-    /// Optional 1...10 when `Eternal_Summon_Assets/01_Sprites/Ultra_Legends_Rising` file order matches the roster. Excel/JSON: `ULR_Asset_Slot`.
+    /// Optional 1...10 when ULR slot roster matches. Excel/JSON: `ULR_Asset_Slot`.
     var ulrAssetSlot: Int?
+
+    // MARK: - Bundled art / moves (from master sheet export)
+
+    /// e.g. `Aetherion` — folder under `Ultra_Legends_Rising`.
+    var spriteFolder: String?
+    /// e.g. `char_001_Aetherion_the_Eternal_Sovereign` (no extension); .png in bundle.
+    var assetFileStem: String?
+    /// Base / bonus / other selectable forms.
+    var variants: [CharacterVariant]
+    /// Optional bundled MP4 per move slot (filename only), parallel to move1…4.
+    var moveVideoFileNames: [String]
+    /// Production animation prompt per slot (Grok/Imagine); optional.
+    var moveAnimationPrompts: [String]
 
     var moves: [FighterMove] {
         [
@@ -59,7 +72,12 @@ struct GameCharacter: Identifiable, Codable, Hashable, Sendable {
         move4Name: String,
         move4Description: String,
         isPuny: Bool,
-        ulrAssetSlot: Int? = nil
+        ulrAssetSlot: Int? = nil,
+        spriteFolder: String? = nil,
+        assetFileStem: String? = nil,
+        variants: [CharacterVariant] = [],
+        moveVideoFileNames: [String] = [],
+        moveAnimationPrompts: [String] = []
     ) {
         self.id = id
         self.name = name
@@ -77,6 +95,11 @@ struct GameCharacter: Identifiable, Codable, Hashable, Sendable {
         self.move4Description = move4Description
         self.isPuny = isPuny
         self.ulrAssetSlot = ulrAssetSlot
+        self.spriteFolder = spriteFolder
+        self.assetFileStem = assetFileStem
+        self.variants = variants
+        self.moveVideoFileNames = moveVideoFileNames
+        self.moveAnimationPrompts = moveAnimationPrompts
     }
 }
 
@@ -105,6 +128,11 @@ extension GameCharacter {
         case move4Description = "Move4_Desc"
         case isPuny = "IsPuny"
         case ulrAssetSlot = "ULR_Asset_Slot"
+        case spriteFolder = "Sprite_Folder"
+        case assetFileStem = "Asset_File_Name"
+        case variants = "Variants"
+        case moveVideoFileNames = "Move_Video_Files"
+        case moveAnimationPrompts = "Move_Animation_Prompts"
     }
 }
 
@@ -117,7 +145,7 @@ extension GameCharacter {
         id = try c.decode(String.self, forKey: .id)
         name = try c.decode(String.self, forKey: .name)
         let rarityRaw = try c.decode(String.self, forKey: .rarity)
-        rarity = Rarity.catalogDecode(rarityRaw) ?? .heroic
+        rarity = Rarity.catalogDecode(rarityRaw) ?? .hero
         type = try c.decodeIfPresent(String.self, forKey: .type) ?? "Unknown"
         if let pl = try? c.decodeIfPresent(Int.self, forKey: .powerLevel) {
             powerLevel = pl
@@ -137,6 +165,23 @@ extension GameCharacter {
         move4Description = try c.decodeIfPresent(String.self, forKey: .move4Description) ?? ""
         isPuny = try c.decodeIfPresent(Bool.self, forKey: .isPuny) ?? false
         ulrAssetSlot = try c.decodeIfPresent(Int.self, forKey: .ulrAssetSlot)
+        spriteFolder = try c.decodeIfPresent(String.self, forKey: .spriteFolder)
+        assetFileStem = try c.decodeIfPresent(String.self, forKey: .assetFileStem)
+        variants = try c.decodeIfPresent([CharacterVariant].self, forKey: .variants) ?? []
+        moveAnimationPrompts = try c.decodeIfPresent([String].self, forKey: .moveAnimationPrompts) ?? []
+        moveVideoFileNames = try Self.decodePaddedStringArray(padTo: 4, container: c, key: .moveVideoFileNames)
+    }
+
+    private static func decodePaddedStringArray(
+        padTo: Int,
+        container: KeyedDecodingContainer<CodingKeys>,
+        key: CodingKeys
+    ) throws -> [String] {
+        if let arr = try container.decodeIfPresent([String].self, forKey: key) {
+            if arr.count >= padTo { return Array(arr.prefix(padTo)) }
+            return arr + Array(repeating: "", count: padTo - arr.count)
+        }
+        return Array(repeating: "", count: padTo)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -157,5 +202,10 @@ extension GameCharacter {
         try c.encode(move4Description, forKey: .move4Description)
         try c.encode(isPuny, forKey: .isPuny)
         try c.encodeIfPresent(ulrAssetSlot, forKey: .ulrAssetSlot)
+        try c.encodeIfPresent(spriteFolder, forKey: .spriteFolder)
+        try c.encodeIfPresent(assetFileStem, forKey: .assetFileStem)
+        if !variants.isEmpty { try c.encode(variants, forKey: .variants) }
+        if !moveVideoFileNames.isEmpty { try c.encode(moveVideoFileNames, forKey: .moveVideoFileNames) }
+        if !moveAnimationPrompts.isEmpty { try c.encode(moveAnimationPrompts, forKey: .moveAnimationPrompts) }
     }
 }

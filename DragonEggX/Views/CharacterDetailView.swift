@@ -10,22 +10,51 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     let fighter: GameCharacter
+    @Environment(CharacterVariantStore.self) private var variantStore
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                CharacterArtView(character: fighter, showUltralLoop: fighter.rarity == .ascendantLegends)
+                if fighter.variants.filter(\.isUnlocked).count > 1 {
+                    variantPicker
+                }
+                CharacterArtView(
+                    character: fighter,
+                    showUltralLoop: fighter.rarity == .ultraLegendsRising
+                )
                 header
                 powerRow
                 movesSection
             }
             .padding()
         }
-        .background(Color.black.opacity(0.12))
+        .background(
+            LinearGradient(
+                colors: [Color(red: 0.06, green: 0.07, blue: 0.14), Color(red: 0.02, green: 0.02, blue: 0.06)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
         .navigationTitle(fighter.name)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
+    }
+
+    private var variantPicker: some View {
+        Picker("Form", selection: variantBinding) {
+            ForEach(fighter.variants.filter(\.isUnlocked)) { v in
+                Text(v.isBonus ? "\(v.displayName) (Bonus)" : v.displayName).tag(v.id)
+            }
+        }
+        .pickerStyle(.segmented)
+    }
+
+    private var variantBinding: Binding<String> {
+        Binding(
+            get: { variantStore.selectedVariantId(for: fighter.id) },
+            set: { variantStore.setSelectedVariantId($0, for: fighter.id) }
+        )
     }
 
     private var header: some View {

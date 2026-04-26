@@ -58,11 +58,18 @@ enum BattleEngine: Sendable {
         let rarityBonus = character.rarity.tierIndex * 3
         let power = max(1, base + plBonus + rarityBonus)
         let f = character.moves[slot]
+        let anim: String
+        if character.moveAnimationPrompts.indices.contains(slot), !character.moveAnimationPrompts[slot].isEmpty {
+            anim = character.moveAnimationPrompts[slot]
+        } else {
+            anim = f.description
+        }
         return BattleMove(
             id: "\(character.id).move.\(slot)",
             slotIndex: slot,
             name: f.name,
             description: f.description,
+            animationPrompt: anim,
             power: power,
             moveTypeLabel: moveTypeLabel(for: character, slot: slot, kind: kind),
             rarity: character.rarity,
@@ -81,9 +88,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 0,
                 name: "Solar Fang",
                 description: "",
+                animationPrompt: "",
                 power: 24,
                 moveTypeLabel: "Light",
-                rarity: .limitLegend,
+                rarity: .lr,
                 kind: .blast,
                 element: .light,
                 accuracy: 0.95,
@@ -95,9 +103,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 1,
                 name: "Dragon Knuckle",
                 description: "",
+                animationPrompt: "",
                 power: 18,
                 moveTypeLabel: "Neutral",
-                rarity: .limitLegend,
+                rarity: .lr,
                 kind: .jab,
                 element: .neutral,
                 accuracy: 0.98,
@@ -109,9 +118,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 2,
                 name: "Eggquake",
                 description: "",
+                animationPrompt: "",
                 power: 30,
                 moveTypeLabel: "Earth",
-                rarity: .limitLegend,
+                rarity: .lr,
                 kind: .charge,
                 element: .earth,
                 accuracy: 0.88,
@@ -123,9 +133,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 3,
                 name: "Ascendant Burst",
                 description: "",
+                animationPrompt: "",
                 power: 44,
                 moveTypeLabel: "Light",
-                rarity: .limitLegend,
+                rarity: .lr,
                 kind: .finisher,
                 element: .light,
                 accuracy: 0.82,
@@ -142,9 +153,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 0,
                 name: "Grammar Peck",
                 description: "",
+                animationPrompt: "",
                 power: 15,
                 moveTypeLabel: "Neutral",
-                rarity: .sparkflare,
+                rarity: .sparking,
                 kind: .jab,
                 element: .neutral,
                 accuracy: 0.95,
@@ -156,9 +168,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 1,
                 name: "Green Flame",
                 description: "",
+                animationPrompt: "",
                 power: 24,
                 moveTypeLabel: "Dark",
-                rarity: .sparkflare,
+                rarity: .sparking,
                 kind: .charge,
                 element: .dark,
                 accuracy: 0.90,
@@ -170,9 +183,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 2,
                 name: "Lesson Lock",
                 description: "",
+                animationPrompt: "",
                 power: 28,
                 moveTypeLabel: "Dark",
-                rarity: .sparkflare,
+                rarity: .sparking,
                 kind: .finisher,
                 element: .dark,
                 accuracy: 0.84,
@@ -184,9 +198,10 @@ enum BattleEngine: Sendable {
                 slotIndex: 3,
                 name: "Detention",
                 description: "",
+                animationPrompt: "",
                 power: 12,
                 moveTypeLabel: "Neutral",
-                rarity: .sparkflare,
+                rarity: .sparking,
                 kind: .blast,
                 element: .neutral,
                 accuracy: 0.92,
@@ -289,7 +304,7 @@ enum BattleEngine: Sendable {
             currentHP: 140,
             maxHP: 140,
             powerLevel: 1_200,
-            rarity: .limitLegend,
+            rarity: .lr,
             characterType: "Light",
             attack: 28,
             defense: 12,
@@ -297,7 +312,7 @@ enum BattleEngine: Sendable {
             battleElement: .light,
             moves: moves(
                 for: GameCharacter(
-                    id: demoDominusId, name: "Dominus", rarity: .limitLegend, type: "Light", powerLevel: 1_200, spritePrompt: "",
+                    id: demoDominusId, name: "Dominus", rarity: .lr, type: "Light", powerLevel: 1_200, spritePrompt: "",
                     move1Name: "Solar Fang", move1Description: "", move2Name: "Dragon Knuckle", move2Description: "",
                     move3Name: "Eggquake", move3Description: "", move4Name: "Ascendant Burst", move4Description: "",
                     isPuny: false, ulrAssetSlot: nil
@@ -308,7 +323,7 @@ enum BattleEngine: Sendable {
 
     private static func makeDuogringoDemoCombatant(isPlayer: Bool) -> BattleCombatant {
         let gc = GameCharacter(
-            id: demoDuogringoId, name: "Duogringo", rarity: .sparkflare, type: "Dark", powerLevel: 800, spritePrompt: "",
+            id: demoDuogringoId, name: "Duogringo", rarity: .sparking, type: "Dark", powerLevel: 800, spritePrompt: "",
             move1Name: "Grammar Peck", move1Description: "", move2Name: "Green Flame", move2Description: "",
             move3Name: "Lesson Lock", move3Description: "", move4Name: "Detention", move4Description: "",
             isPuny: false, ulrAssetSlot: nil
@@ -320,7 +335,7 @@ enum BattleEngine: Sendable {
             currentHP: 130,
             maxHP: 130,
             powerLevel: 800,
-            rarity: .sparkflare,
+            rarity: .sparking,
             characterType: "Dark",
             attack: 24,
             defense: 11,

@@ -35,6 +35,14 @@ struct BattleView: View {
     // MARK: - Pre-battle
 
     private var preBattle: some View {
+        ZStack {
+            LinearGradient(
+                colors: [Color(red: 0.05, green: 0.06, blue: 0.14), Color.black.opacity(0.9)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
         VStack(alignment: .leading, spacing: 16) {
             Text("1v1 — try the demo, or pick your first party member for a catalog match.")
                 .font(.subheadline)
@@ -89,6 +97,7 @@ struct BattleView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
+        }
     }
 
     private var firstPartyFighter: String? {
@@ -116,6 +125,13 @@ private struct BattleViewContent: View {
 
     var body: some View {
         ZStack {
+            LinearGradient(
+                colors: [Color(red: 0.04, green: 0.05, blue: 0.12), Color.black.opacity(0.92)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+
             VStack(spacing: 0) {
                 BattleLessonChrome(
                     phaseDescription: BattleView.phaseLabel(st.phase, turn: st.turnNumber),
@@ -125,6 +141,20 @@ private struct BattleViewContent: View {
                 )
                 .padding(.horizontal, 12)
                 .padding(.top, 8)
+
+                if let cue = coordinator.activeAnimation, coordinator.isResolvingTurn {
+                    Text(cue.displayName)
+                        .font(.title2.weight(.black))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [cue.vfxRarity.glowColor, .white],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .padding(.top, 4)
+                        .shadow(color: .black.opacity(0.85), radius: 6, y: 2)
+                }
 
                 vfxRow
 
@@ -261,7 +291,7 @@ private struct BattleViewContent: View {
                                 .multilineTextAlignment(.leading)
                             Text("PWR \(m.power) · \(m.moveTypeLabel)")
                                 .font(.caption2)
-                            Text("Rarity: \(m.rarity.displayName)")
+                            Text("Tier: \(m.rarity.displayName)")
                                 .font(.caption2)
                                 .foregroundStyle(.secondary)
                         }
@@ -270,7 +300,7 @@ private struct BattleViewContent: View {
                         .background(m.rarity.glowColor.opacity(0.15), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                     }
                     .buttonStyle(.plain)
-                    .disabled(!coordinator.canChooseMove)
+                    .disabled(!coordinator.canChooseMove || coordinator.isResolvingTurn)
                 }
             }
         } else {

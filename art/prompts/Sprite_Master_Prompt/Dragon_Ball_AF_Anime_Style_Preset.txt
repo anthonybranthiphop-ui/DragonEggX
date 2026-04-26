@@ -1,0 +1,35 @@
+Dragon Ball AF anime sprite style preset for Dragon Egg X still generation:
+
+- Fully original character that belongs in the Dragon Ball AF universe
+- 2D anime illustration, late-90s/early-2000s shonen look
+- Strong black ink outlines, crisp cel shading, saturated but controlled colors
+- Muscular or athletic humanoid proportions, readable anatomy, expressive anime face
+- Dynamic battle-ready pose, clear combat silhouette, full-body or near-full-body
+- Transformation-heavy AF energy: long wild hair, primal aura, god ki, speed lines, energy shockwaves
+- Costume language closer to Dragon Ball / DBGT / AF fan-anime aesthetics:
+  fitted gi pieces, battle armor, gloves, boots, wraps, belts, shoulder guards, tails/fur/hair transformations
+- Simplified, readable costume shapes that work as a mobile game sprite
+- Aura and VFX should feel explosive and anime-combat-driven, not mythic or painterly
+- Transparent or transparent-friendly background
+- Think "anime fighter splash art" or "AF episode key visual," not "mythic fantasy trading card"
+
+Roster balance requirement:
+
+- At least 25 of the 100 final sprites must clearly read as Saiyan-based or hybrid-Saiyan AF fighters
+- For those selected characters, emphasize traditional Dragon Ball transformation hair:
+  sharp spiky silhouettes, long SSJ5-style hair, primal fur accents, Saiyan gloves/boots/armor, battle-worn gi pieces
+- Saiyan-based characters should still be diverse:
+  heroes, fusions, antiheroes, god forms, hybrids, and primal transformations
+- Do not make the entire roster villains or cosmic demons; keep a healthy mix of heroic AF fighter energy
+
+Hard avoid:
+
+- No ornate high-fantasy deity robes
+- No baroque gold filigree overload
+- No giant saint-like halos or celestial mandalas dominating the composition
+- No ritual floor circles, summoning glyphs, clock halos, or magic sigils framing the body
+- No crowns, tiaras, gem-heavy headdresses, jewelry bras, or priest-like costume styling
+- No excessive floating artifacts that hide the body
+- No painterly fantasy card-art rendering
+- No western fantasy MMORPG armor design
+- No text, watermark, logo, UI, or extra characters

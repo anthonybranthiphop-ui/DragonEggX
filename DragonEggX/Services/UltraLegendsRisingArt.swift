@@ -2,8 +2,8 @@
 //  UltraLegendsRisingArt.swift
 //  Dragon Egg X
 //
-//  Local art in `Eternal_Summon_Assets/01_Sprites/Ultra_Legends_Rising` (JPG + matching MP4).
-//  We match the catalog `Name` to filename hints; extend the roster as you add files.
+//  Legacy roster filenames in `Ultra_Legends_Rising` (flat bundle) + matching MP4 loops.
+//  Prefer `CharacterAssetResolver` for new nested `char_XXX_…` stills.
 //
 
 import Foundation
@@ -39,8 +39,19 @@ enum UltraLegendsRisingArt {
         return nil
     }
 
+    /// Catalog URL only when a file is actually in the app bundle.
+    static func presentablePortraitURLIfAvailable(for character: GameCharacter) -> URL? {
+        guard let u = portraitURL(for: character) else { return nil }
+        if FileManager.default.fileExists(atPath: u.path) { return u }
+        return nil
+    }
+
     static func portraitURL(for character: GameCharacter) -> URL? {
-        guard character.rarity == .ascendantLegends else { return nil }
+        portraitURLWithLegacyRosterFallback(for: character)
+    }
+
+    static func portraitURLWithLegacyRosterFallback(for character: GameCharacter) -> URL? {
+        guard character.rarity == .ultraLegendsRising else { return nil }
         if let slot = character.ulrAssetSlot, (1...roster.count).contains(slot) {
             return bundleURL(matchingJPG: roster[slot - 1].jpg)
         }
@@ -54,15 +65,8 @@ enum UltraLegendsRisingArt {
         return nil
     }
 
-    /// Catalog URL only when a file is actually in the app bundle (so callers can use deterministic filler when missing).
-    static func presentablePortraitURLIfAvailable(for character: GameCharacter) -> URL? {
-        guard let u = portraitURL(for: character) else { return nil }
-        if FileManager.default.fileExists(atPath: u.path) { return u }
-        return nil
-    }
-
     static func characterLoopVideoURL(for character: GameCharacter) -> URL? {
-        guard character.rarity == .ascendantLegends else { return nil }
+        guard character.rarity == .ultraLegendsRising else { return nil }
         if let slot = character.ulrAssetSlot, (1...roster.count).contains(slot) {
             let jpg = roster[slot - 1].jpg
             let base = (jpg as NSString).deletingPathExtension
