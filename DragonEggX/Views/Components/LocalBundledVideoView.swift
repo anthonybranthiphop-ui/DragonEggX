@@ -136,7 +136,8 @@ struct LocalBundledVideoView: View {
 
     private func applyPitchAlgorithm(to item: AVPlayerItem, rate: Float, preservePitch: Bool) {
         if preservePitch, (rate - 1.0).magnitude > 0.01 {
-            item.audioTimePitchAlgorithm = .timeDomain
+            // `.spectral` keeps pitch natural at altered rates; `.varispeed` sounds chipmunk at 2×.
+            item.audioTimePitchAlgorithm = .spectral
         } else {
             item.audioTimePitchAlgorithm = .varispeed
         }

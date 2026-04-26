@@ -8,11 +8,23 @@
 
 import Foundation
 
+/// User preference for summon tier MP4 playback speed. Persisted so 2× survives app relaunch.
+enum SummonAnimationSettings {
+    static let doubleSpeedKey = "summonAnimationDoubleSpeedEnabled"
+
+    static var doubleSpeedEnabled: Bool {
+        get { UserDefaults.standard.bool(forKey: doubleSpeedKey) }
+        set { UserDefaults.standard.set(newValue, forKey: doubleSpeedKey) }
+    }
+}
+
 enum SummonAnimationCompletionReason: Equatable, Sendable {
     case finishedNaturally
     case userSkipped
     /// Fired if bundled video never posted end (missing asset, engine stall, or safety cap).
     case safetyTimeout
+    /// No tier MP4 in bundle — skip waiting on `LocalBundledVideoView`.
+    case noBundledVideo
 }
 
 /// All state and pull work on the main actor so `await` cannot interleave a second `performRandomPull`.
@@ -33,20 +45,29 @@ final class SummonViewModel {
     var summonPlaybackRate: Float = 1.0
     private(set) var hasFinalizedCurrentSummonReveal: Bool = true
 
+    /// Mirrors `SummonAnimationSettings` for UI labels (2× ON / OFF).
+    var summonDoubleSpeedEnabled: Bool {
+        summonPlaybackRate > 1.5
+    }
+
     private var vfxWaitContinuation: CheckedContinuation<SummonAnimationCompletionReason, Never>?
     private var chargePhaseTask: Task<Void, Never>?
     private var vfxTimeoutTask: Task<Void, Never>?
+
+    init() {
+        summonPlaybackRate = SummonAnimationSettings.doubleSpeedEnabled ? 2.0 : 1.0
+    }
 
     func performRandomPull(catalog: [GameCharacter]) async {
         // Second tap can queue before SwiftUI re-disables the button; `await` also releases the actor.
         guard !isAnimating, !catalog.isEmpty else { return }
         guard let pick = catalog.randomElement() else { return }
 
-        // New summon: reset rate; prior reveal is superseded.
+        // New summon: apply persisted playback speed; prior reveal is superseded.
         isAnimating = true
         isSummonAnimationPlaying = true
         canSkipSummonAnimation = true
-        summonPlaybackRate = 1.0
+        summonPlaybackRate = SummonAnimationSettings.doubleSpeedEnabled ? 2.0 : 1.0
         hasFinalizedCurrentSummonReveal = false
         lastPulled = nil
         activePull = pick
@@ -54,6 +75,14 @@ final class SummonViewModel {
         animationPhase = "charge"
         vfxWaitContinuation = nil
         cancelChildTasks()
+
+        if SummonEffectLibrary.videoURL(for: pick.rarity) == nil {
+            // Resources are flat: missing MP4 must not hold the full-screen shell for seconds.
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(50))
+                self.finalizeSummonAnimationIfNeeded(reason: .noBundledVideo)
+            }
+        }
 
         let reason: SummonAnimationCompletionReason = await withCheckedContinuation { (continuation: CheckedContinuation<SummonAnimationCompletionReason, Never>) in
             vfxWaitContinuation = continuation
@@ -95,6 +124,7 @@ final class SummonViewModel {
     func toggleSummonPlaybackRate() {
         let next: Float = summonPlaybackRate < 1.5 ? 2.0 : 1.0
         summonPlaybackRate = next
+        SummonAnimationSettings.doubleSpeedEnabled = next > 1.5
     }
 
     /// Entry point for bundled MP4 natural end, safety wiring, and tests.
