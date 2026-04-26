@@ -54,6 +54,17 @@ enum Rarity: String, CaseIterable, Comparable, Sendable {
 
     var displayName: String { rawValue }
 
+    /// Folder name under `Eternal_Summon_Assets/01_Sprites/` in the app bundle (underscores where needed).
+    var bundledSpriteTierFolder: String {
+        switch self {
+        case .hero: return "Hero"
+        case .sparking: return "Sparking"
+        case .lr: return "LR"
+        case .ultra: return "Ultra"
+        case .ultraLegendsRising: return "Ultra_Legends_Rising"
+        }
+    }
+
     var glowColor: Color {
         switch self {
         case .hero: return .green

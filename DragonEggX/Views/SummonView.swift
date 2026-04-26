@@ -106,18 +106,8 @@ struct SummonView: View {
             Button {
                 showDetail = c
             } label: {
-                HStack(spacing: 16) {
-                    CharacterArtView(character: c, showUltralLoop: false, usePulledFillerByDefault: true)
-                        .frame(width: 120, height: 180)
-                    VStack(alignment: .leading) {
-                        Text(c.name)
-                            .font(.title3.weight(.bold))
-                        Text(c.rarity.displayName)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(c.rarity.glowColor)
-                    }
-                    Spacer()
-                }
+                CharacterTitleCardView(character: c, mode: .medium)
+                    .frame(maxWidth: 320)
             }
             .buttonStyle(.plain)
         }

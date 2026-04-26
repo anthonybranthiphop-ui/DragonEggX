@@ -18,10 +18,15 @@ struct CharacterDetailView: View {
                 if fighter.variants.filter(\.isUnlocked).count > 1 {
                     variantPicker
                 }
-                CharacterArtView(
-                    character: fighter,
-                    showUltralLoop: fighter.rarity == .ultraLegendsRising
-                )
+                CharacterTitleCardView(character: fighter, mode: .hero)
+                if fighter.rarity == .ultraLegendsRising,
+                   let v = CharacterAssetResolver.characterIdleOrLoopVideoURL(for: fighter) {
+                    LocalBundledVideoView(url: v, loop: true, fillsContainer: false, preserveAudioPitchAtAlteredRate: true)
+                        .id(v)
+                        .frame(height: 200)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .padding(.top, 8)
+                }
                 header
                 powerRow
                 movesSection

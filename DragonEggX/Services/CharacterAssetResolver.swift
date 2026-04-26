@@ -22,14 +22,16 @@ enum CharacterAssetResolver {
     }
 
     static func urlForCharacterVariant(_ character: GameCharacter, variantId: String) -> URL? {
+        let rarityDir = character.rarity.bundledSpriteTierFolder
         if let v = character.variants.first(where: { $0.id == variantId && $0.isUnlocked }) {
-            if let u = resolveULRFileName(v.assetFileName), FileManager.default.fileExists(atPath: u.path) {
+            if let u = resolveULRFileName(v.assetFileName, rarityFolder: rarityDir),
+               FileManager.default.fileExists(atPath: u.path) {
                 return u
             }
         }
         if variantId == "base" || character.variants.isEmpty {
             if let stem = character.assetFileStem, let folder = character.spriteFolder,
-               let u = resolveULR(stem: stem, ext: "png", subfolder: folder),
+               let u = resolveULR(stem: stem, ext: "png", subfolder: folder, rarityFolder: rarityDir),
                FileManager.default.fileExists(atPath: u.path) {
                 return u
             }
@@ -40,8 +42,9 @@ enum CharacterAssetResolver {
     // MARK: - Video (idle / move)
 
     static func characterIdleOrLoopVideoURL(for character: GameCharacter) -> URL? {
+        let rarityDir = character.rarity.bundledSpriteTierFolder
         if let stem = character.assetFileStem, let folder = character.spriteFolder {
-            if let u = resolveULR(stem: "\(stem)_idle", ext: "mp4", subfolder: folder) {
+            if let u = resolveULR(stem: "\(stem)_idle", ext: "mp4", subfolder: folder, rarityFolder: rarityDir) {
                 if FileManager.default.fileExists(atPath: u.path) { return u }
             }
         }
@@ -51,14 +54,15 @@ enum CharacterAssetResolver {
     static func battleMoveVideoURL(for character: GameCharacter, moveSlot: Int) -> URL? {
         guard moveSlot >= 0, moveSlot < 4 else { return nil }
         let explicit = character.moveVideoFileNames[moveSlot].trimmingCharacters(in: .whitespacesAndNewlines)
-        if !explicit.isEmpty, let u = resolveULRFileName(explicit) {
+        let rarityDir = character.rarity.bundledSpriteTierFolder
+        if !explicit.isEmpty, let u = resolveULRFileName(explicit, rarityFolder: rarityDir) {
             if FileManager.default.fileExists(atPath: u.path) { return u }
         }
         if let folder = character.spriteFolder, let stem = character.assetFileStem {
             let m = character.moves[moveSlot]
             let conventional = moveFileStem(heroStem: stem, moveName: m.name) + ".mp4"
-            if let u = resolveULRFileName(conventional) { if FileManager.default.fileExists(atPath: u.path) { return u } }
-            if let u = resolveULR(stem: (conventional as NSString).deletingPathExtension, ext: "mp4", subfolder: folder) {
+            if let u = resolveULRFileName(conventional, rarityFolder: rarityDir) { if FileManager.default.fileExists(atPath: u.path) { return u } }
+            if let u = resolveULR(stem: (conventional as NSString).deletingPathExtension, ext: "mp4", subfolder: folder, rarityFolder: rarityDir) {
                 if FileManager.default.fileExists(atPath: u.path) { return u }
             }
         }
@@ -75,8 +79,8 @@ enum CharacterAssetResolver {
 
     // MARK: - URL helpers
 
-    /// Any filename with optional subdirs, under ULR.
-    private static func resolveULRFileName(_ fileName: String) -> URL? {
+    /// Any filename with optional subdirs; tries rarity folders (e.g. `…/01_Sprites/Hero/…`) and ULR.
+    private static func resolveULRFileName(_ fileName: String, rarityFolder: String? = nil) -> URL? {
         let trimmed = fileName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return nil }
         let str = NSString(string: trimmed)
@@ -85,21 +89,29 @@ enum CharacterAssetResolver {
         let base = (last as NSString).deletingPathExtension
         let ext = (last as NSString).pathExtension
         if sub.isEmpty || sub == "." {
-            return resolveByTryingSubdirectories(stem: base, ext: ext, relativeUnderULR: nil)
+            return resolveByTryingSubdirectories(stem: base, ext: ext, relativeUnderULR: nil, rarityFolder: rarityFolder)
         }
-        return resolveByTryingSubdirectories(stem: base, ext: ext, relativeUnderULR: sub)
+        return resolveByTryingSubdirectories(stem: base, ext: ext, relativeUnderULR: sub, rarityFolder: rarityFolder)
     }
 
-    private static func resolveULR(stem: String, ext: String, subfolder: String) -> URL? {
-        resolveByTryingSubdirectories(stem: stem, ext: ext, relativeUnderULR: subfolder)
+    private static func resolveULR(stem: String, ext: String, subfolder: String, rarityFolder: String?) -> URL? {
+        resolveByTryingSubdirectories(stem: stem, ext: ext, relativeUnderULR: subfolder, rarityFolder: rarityFolder)
     }
 
     private static func resolveByTryingSubdirectories(
         stem: String,
         ext: String,
-        relativeUnderULR: String?
+        relativeUnderULR: String?,
+        rarityFolder: String? = nil
     ) -> URL? {
-        var dirs: [String?] = [nil, relativeUnderULR, "Aetherion", "Zorvath", "Lumina", "Nyxus", "Boreal", "Ignara", "Zorath", "Elara", "Grakthar"]
+        var dirs: [String?] = []
+        if let rf = rarityFolder, !rf.isEmpty, let rel = relativeUnderULR, !rel.isEmpty {
+            dirs.append("\(EternalSummonPaths.root)/01_Sprites/\(rf)/\(rel)")
+        }
+        if let rf = rarityFolder, !rf.isEmpty {
+            dirs.append("\(EternalSummonPaths.root)/01_Sprites/\(rf)")
+        }
+        dirs.append(contentsOf: [nil, relativeUnderULR, "Aetherion", "Zorvath", "Lumina", "Nyxus", "Boreal", "Ignara", "Zorath", "Elara", "Grakthar"])
         dirs.append(contentsOf: [ulrPrefix, "\(ulrPrefix)/Aetherion", "\(ulrPrefix)/Zorvath"])
         // Unique order
         var seen = Set<String>()

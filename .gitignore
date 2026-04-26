@@ -4,9 +4,17 @@
 *.xcuserstate
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
+
+# Local build/cache folders
 DerivedData/
 build/
 XcodeBuildData/
+.derived_crashfix/
+.derived_data/
+.derived_data_exec/
+.derived_data_exec2/
+.derived_data_run/
+.verify_derived_data/
 
 # Build/export artifacts
 *.ipa
@@ -23,5 +31,6 @@ XcodeBuildData/
 __pycache__/
 *.pyc
 
-# Temporary project backups
+# Temporary backups / lock files
 project.yml.backup.*
+~$*.xlsx

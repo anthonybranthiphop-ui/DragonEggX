@@ -32,8 +32,18 @@ enum CatalogGridArt: Sendable {
     static func portraitURLIfAvailable(for character: GameCharacter) -> URL? {
         guard let slot = loaded[character.id], (1...100).contains(slot) else { return nil }
         let base = String(format: "MasterCatalog_%02d", slot)
-        guard let u = Bundle.main.url(forResource: base, withExtension: "png", subdirectory: nil) else { return nil }
-        if FileManager.default.fileExists(atPath: u.path) { return u }
+        let subdirs: [String?] = [
+            EternalSummonPaths.masterCatalogGridFolder,
+            nil
+        ]
+        for sub in subdirs {
+            if let u = Bundle.main.url(forResource: base, withExtension: "png", subdirectory: sub),
+               FileManager.default.fileExists(atPath: u.path) { return u }
+        }
+        if let r = Bundle.main.resourceURL {
+            let nested = r.appendingPathComponent("\(EternalSummonPaths.masterCatalogGridFolder)/\(base).png")
+            if FileManager.default.fileExists(atPath: nested.path) { return nested }
+        }
         return nil
     }
 

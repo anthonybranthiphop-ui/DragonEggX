@@ -10,6 +10,11 @@
 		0119EBD6F5D2DE5DD839A22B /* 04_Nyxus, Cloud God of Eternal Storms.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BCD9647F3F84A58F29A6A6B8 /* 04_Nyxus, Cloud God of Eternal Storms.mp4 */; };
 		016E1E216F3177FA786B38F7 /* MasterCatalog_74.png in Resources */ = {isa = PBXBuildFile; fileRef = DF9055136A8ADB490074F203 /* MasterCatalog_74.png */; };
 		083716D021EDEAF1EC204E54 /* GrokSpritePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC59067CF19297F11434441E /* GrokSpritePlaceholder.swift */; };
+		B1C2D3E4F5061728394A5B6D /* TitleCardBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5061728394A5B6C /* TitleCardBackgroundView.swift */; };
+		B2C3D4E5F60718293A4B5C6D /* RarityCardOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F60718293A4B5C6C /* RarityCardOverlayView.swift */; };
+		B3C4D5E6F708192A3B4C5D6D /* RarityBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C4D5E6F708192A3B4C5D6C /* RarityBadgeView.swift */; };
+		B4C5D6E7F8091A2B3C4D5E6D /* CharacterCardNameplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5D6E7F8091A2B3C4D5E6C /* CharacterCardNameplateView.swift */; };
+		B5C6D7E8F90A1B2C3D4E5F6D /* CharacterTitleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6D7E8F90A1B2C3D4E5F6C /* CharacterTitleCardView.swift */; };
 		09BD164841E7DE4CCC851E4C /* 05_Boreal, Crystal God of Eternal Light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 86356BBBBC2B4FECC26C129A /* 05_Boreal, Crystal God of Eternal Light.jpg */; };
 		09CDA8C0076790C3CCF95ADA /* catalog_sheet_mapping.json in Resources */ = {isa = PBXBuildFile; fileRef = 76538B6F03F89F171C3AF75F /* catalog_sheet_mapping.json */; };
 		0AF8F06C9BE09F21F42A1E3A /* 2. Zorvath, the Reality Ender (Ultra).jpg in Resources */ = {isa = PBXBuildFile; fileRef = C16C88AE6C899D3008387DA0 /* 2. Zorvath, the Reality Ender (Ultra).jpg */; };
@@ -220,6 +225,11 @@
 		2CEA225D87ACE0E4D2DF8EB1 /* LocalBundledVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBundledVideoView.swift; sourceTree = "<group>"; };
 		2DC3D4AE060B3F924F75D735 /* MasterCatalog_43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MasterCatalog_43.png; sourceTree = "<group>"; };
 		2DFA5B8156FDCB6FBE59F58D /* PulledCharacterFillerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulledCharacterFillerView.swift; sourceTree = "<group>"; };
+		B1C2D3E4F5061728394A5B6C /* TitleCardBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCardBackgroundView.swift; sourceTree = "<group>"; };
+		B2C3D4E5F60718293A4B5C6C /* RarityCardOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RarityCardOverlayView.swift; sourceTree = "<group>"; };
+		B3C4D5E6F708192A3B4C5D6C /* RarityBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RarityBadgeView.swift; sourceTree = "<group>"; };
+		B4C5D6E7F8091A2B3C4D5E6C /* CharacterCardNameplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardNameplateView.swift; sourceTree = "<group>"; };
+		B5C6D7E8F90A1B2C3D4E5F6C /* CharacterTitleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTitleCardView.swift; sourceTree = "<group>"; };
 		3000A31E24D4132F9BCB5BF8 /* MasterCatalog_56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MasterCatalog_56.png; sourceTree = "<group>"; };
 		305DC23DDE94643F64D53B0C /* 07_Zorath, Frost Demon God of Absolute Zero.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "07_Zorath, Frost Demon God of Absolute Zero.mp4"; sourceTree = "<group>"; };
 		31E337A22935AF980C7D3BEC /* MasterCatalog_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MasterCatalog_20.png; sourceTree = "<group>"; };
@@ -525,10 +535,15 @@
 			children = (
 				644086D7A7759EE4137B87C7 /* BattleAttackEffectView.swift */,
 				DCA530C20DF8F11973FA4CA3 /* BattleHPBar.swift */,
+				B4C5D6E7F8091A2B3C4D5E6C /* CharacterCardNameplateView.swift */,
+				B5C6D7E8F90A1B2C3D4E5F6C /* CharacterTitleCardView.swift */,
 				B0ABEA31349FC13CB22A2E56 /* CharacterArtView.swift */,
 				BC59067CF19297F11434441E /* GrokSpritePlaceholder.swift */,
 				2CEA225D87ACE0E4D2DF8EB1 /* LocalBundledVideoView.swift */,
 				2DFA5B8156FDCB6FBE59F58D /* PulledCharacterFillerView.swift */,
+				B3C4D5E6F708192A3B4C5D6C /* RarityBadgeView.swift */,
+				B2C3D4E5F60718293A4B5C6C /* RarityCardOverlayView.swift */,
+				B1C2D3E4F5061728394A5B6C /* TitleCardBackgroundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -914,6 +929,8 @@
 				10851BD0B8AE714CD1DA8D70 /* CatalogGridArt.swift in Sources */,
 				994D42064500A957E331E719 /* CatalogService.swift in Sources */,
 				8954CE1D56DECC78FBCAB698 /* CharacterArtView.swift in Sources */,
+				B4C5D6E7F8091A2B3C4D5E6D /* CharacterCardNameplateView.swift in Sources */,
+				B5C6D7E8F90A1B2C3D4E5F6D /* CharacterTitleCardView.swift in Sources */,
 				852222567F94149D0961FDBC /* CharacterDetailView.swift in Sources */,
 				20F48FD60624F27639868BFF /* CharacterProgression.swift in Sources */,
 				6AC0D0908ECF6BA4AB5D745B /* CollectionView.swift in Sources */,
@@ -926,8 +943,11 @@
 				4D266A530DD46E9BE3F0E3A1 /* NumberFormatting.swift in Sources */,
 				ECCB53D11793E40C67107B66 /* PlayerBattleProgress.swift in Sources */,
 				C109A35E6C577ACA3271A4D0 /* PulledCharacterFillerView.swift in Sources */,
+				B3C4D5E6F708192A3B4C5D6D /* RarityBadgeView.swift in Sources */,
+				B2C3D4E5F60718293A4B5C6D /* RarityCardOverlayView.swift in Sources */,
 				AC8D3AA07D5D0A6B36DDAEC8 /* Rarity.swift in Sources */,
 				45A9D51A494B9D5234974B4A /* SummonEffectLibrary.swift in Sources */,
+				B1C2D3E4F5061728394A5B6D /* TitleCardBackgroundView.swift in Sources */,
 				D5803BBDE83EBAB4703DC7D4 /* SummonView.swift in Sources */,
 				1AE1AA3425206B1326D8341D /* SummonViewModel.swift in Sources */,
 				AF5F8116B5892D403D9F3E1E /* TeamBuilderView.swift in Sources */,

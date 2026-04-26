@@ -76,18 +76,6 @@ struct CollectionView: View {
 
     @ViewBuilder
     private func collectionCell(_ c: GameCharacter) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            ZStack(alignment: .bottomLeading) {
-                CharacterArtView(character: c, showUltralLoop: false)
-                    .frame(minHeight: 120)
-                Text(c.rarity.displayName)
-                    .font(.caption2.weight(.bold))
-                    .padding(4)
-                    .background(c.rarity.glowColor.opacity(0.85), in: RoundedRectangle(cornerRadius: 4))
-            }
-            Text(c.name)
-                .font(.caption.weight(.semibold))
-                .lineLimit(2)
-        }
+        CharacterTitleCardView(character: c, mode: .compact)
     }
 }
